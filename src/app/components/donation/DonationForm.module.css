@@ -1,0 +1,132 @@
+.donationFormContainer {
+  background-color: #ffffff;
+  padding: 1.2rem; 
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; 
+}
+
+.inputGroup {
+  margin-bottom: 1rem; }
+
+.label {
+  font-size: 0.8rem; 
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #4a4f54;
+}
+
+.amountInputWrapper {
+  display: flex;
+  align-items: center;
+  position: relative; 
+}
+
+.amountInput {
+  flex: 1;
+  padding: 0.5rem; 
+  padding-left: 1rem;
+  font-weight: bold;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  font-size: 1rem;
+  -moz-appearance: textfield; 
+  padding-right: 3rem;
+}
+
+.amountInput::-webkit-outer-spin-button,
+.amountInput::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Elimină săgețile în Chrome, Safari, Edge */
+  margin: 0;
+}
+
+.amountInput:focus {
+  outline: none;
+  border-color: #1b0177;
+}
+
+.amountSuffix {
+  position: absolute;
+  right: 10px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.frequencyOptions,
+.paymentMethods {
+  display: flex;
+  gap: 0.5rem; 
+  padding: 0.3rem;
+  border-radius: 10px;
+  /* border: 1px solid #d3d3d3; */
+  /* background-color: #f9f9f9; */
+}
+
+.frequencyButton,
+.paymentButton {
+  flex: 1;
+  padding: 0.3rem 0.5rem; 
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.frequencyButton.active,
+.paymentButton.active {
+  border-color: #1b0177;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.frequencyButton:not(.active),
+.paymentButton:not(.active) {
+  color: #888;
+  border-color: #d3d3d3;
+  background-color: #f5f5f5;
+}
+
+.paymentButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paymentButton:hover,
+.frequencyButton:hover {
+  border-color: #1b0177;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.paymentIconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.donateButton {
+  width: 100%;
+  padding: 0.5rem; 
+  background-color: #1b0177;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  margin-top: 0.2rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.donateButton:hover {
+  background-color: #1b0177d6;
+  transform: translateY(-2px);
+}
+
+.paymentIcon {
+  margin-bottom: 0.1rem;
+}

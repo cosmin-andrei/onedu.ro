@@ -1,0 +1,169 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.05rem 0.6rem 0.1rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 0.7rem;
+  font-size: 15px;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #212529;
+  font-weight: 600;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chevronIcon {
+  font-size: 0.8rem;
+}
+
+.navItem:hover .navLink {
+  color: #212529;
+  background-color: #e2e6ea;
+}
+
+.subMenuMinimal {
+  position: absolute;
+  top: calc(100% + 0.2rem);
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  list-style: none;
+  padding: 0.7rem 0;
+  margin: 0;
+  z-index: 100;
+  min-width: 180px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.subMenuMinimal li {
+  padding: 0.4rem 1rem;
+  transition: background-color 0.3s;
+}
+
+.subMenuMinimal li:hover {
+  background-color: #f1f1f1;
+}
+
+.subMenuMinimal li a {
+  text-decoration: none;
+  color: #212529;
+  font-weight: 500;
+}
+
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.languageContainer {
+  position: relative;
+  font-size: 14px;
+}
+
+.language {
+  font-weight: bold;
+  padding: 0.15rem 0.4rem;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.language:hover {
+  background-color: #e2e6ea;
+}
+
+.languageMenuMinimal {
+  position: absolute;
+  top: calc(100% + 0.2rem);
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  list-style: none;
+  padding: 0.2rem 0;
+  margin: 0;
+  z-index: 100;
+  min-width: 70px;
+}
+
+.languageMenuMinimal li {
+  padding: 0.5rem ;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.languageMenuMinimal li:hover {
+  background-color: #f1f1f1;
+}
+
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: #00264f;
+}
+
+.donateButton {
+  background-color: #1b0177;
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.header a{
+  text-decoration: none;
+}
+
+.donateButton:hover {
+  background-color: #120560;
+}
+
+.heartIcon {
+  font-size: 1rem;
+}
