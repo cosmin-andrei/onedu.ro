@@ -5,7 +5,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import '../src/app/components/calculator';
 
 const SponsorizeazaPage = () => {
   // State pentru calculator
