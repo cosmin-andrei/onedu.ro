@@ -6,6 +6,7 @@ import { FiMail, FiPhone } from 'react-icons/fi';
 import { FaRegNewspaper } from "react-icons/fa";
 import { IoMdPeople } from "react-icons/io";
 import { AiFillBank } from "react-icons/ai";
+import Link from 'next/link';
 
 const ContactPage = () => {
   return (
@@ -25,9 +26,9 @@ const ContactPage = () => {
         <FiMail className={styles.contactIcon} />
         <div className={styles.contactText}>
           <span className={styles.contactLabel}>Scrie-ne la</span>
-          <a href="mailto:secretariat@onedu.ro" className={styles.contactInfo}>
+          <Link href="mailto:secretariat@onedu.ro" className={styles.contactInfo}>
             secretariat@onedu.ro
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -35,9 +36,9 @@ const ContactPage = () => {
         <FiPhone className={styles.contactIcon} />
         <div className={styles.contactText}>
           <span className={styles.contactLabel}>Sună-ne la</span>
-          <a href="tel:+40753491030" className={styles.contactInfo}>
+          <Link href="tel:+40753491030" className={styles.contactInfo}>
             +40 753 491 030
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -48,9 +49,9 @@ const ContactPage = () => {
       <FaRegNewspaper className={styles.contactIcon} />
         <div className={styles.contactText}>
           <span className={styles.contactTitle}>Presă</span>
-          <a className={styles.contactInfo2}>
+          <p className={styles.contactInfo2}>
             comunicare@onedu.ro
-          </a>
+          </p>
         </div>
       </div>
 
@@ -58,9 +59,9 @@ const ContactPage = () => {
       <IoMdPeople className={styles.contactIcon} />
         <div className={styles.contactText}>
           <span className={styles.contactTitle}>Resurse umane</span>
-          <a className={styles.contactInfo2}>
+          <p className={styles.contactInfo2}>
             hr@onedu.ro
-          </a>
+          </p>
         </div>
       </div>
 
@@ -68,9 +69,9 @@ const ContactPage = () => {
       <AiFillBank className={styles.contactIcon} />
         <div className={styles.contactText}>
           <span className={styles.contactTitle}>Financiar</span>
-          <a className={styles.contactInfo2}>
+          <p className={styles.contactInfo2}>
             financiar@onedu.ro
-          </a>
+          </p>
         </div>
       </div>
       

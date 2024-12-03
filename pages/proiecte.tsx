@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Layout from '../src/app/layout';
 import data from '../src/app/data/proiecte.json'; 
-import styles from '../src/app/style/ProiectePage.module.css'; // Stiluri personalizate
+import styles from '../src/app/style/ProiectePage.module.css';
+import Image from 'next/image';
 
 const ProjectsPage = () => {
     // Extragem lista de proiecte din fișierul JSON
@@ -101,7 +102,7 @@ const ProjectsPage = () => {
                                 className={styles.card}
                                 onClick={() => handleProjectClick(project.id)}
                             >
-                                <img src={project.image} alt={project.title} />
+                                <Image width={500} height={300} src={project.image} alt={project.title} />
                                 <h3 className={styles.sectionTitle}>{project.title}</h3>
                                 <div className={styles.projectDetails}>
                                     <span className={styles.projectCategory}>{project.category}</span>

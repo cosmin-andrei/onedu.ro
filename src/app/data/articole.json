@@ -8,7 +8,7 @@
         "author": "Asociația ONedu",
         "readTime": "2 minute",
         "description": "În data de 5 septembrie ne-am întors în orașul din care mișcarea de digitalizare a educației – Asociația ONedu – a pornit în 2019 la inițiativa a doi elevi gălățeni, nemulțumiți de infrastructura...",
-        "image": "img/blog/stefan_jurizare_gala.jpg"
+        "image": "/img/blog/stefan_jurizare_gala.jpg"
       },
       {
         "id": "legea-educatiei-digitale",
@@ -18,7 +18,7 @@
         "author": "Asociația ONedu",
         "readTime": "4 minute",
         "description": "De peste patru ani, Comunitatea ONedu România, devenită cu acordul Asociația ONedu, susține și acționează direct transformările digitale în învățământ...",
-        "image": "img/blog/cd_sedinta2021.jpg"
+        "image": "/img/blog/cd_sedinta2021.jpg"
       }
     ]
   }

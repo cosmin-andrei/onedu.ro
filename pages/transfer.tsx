@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from '../src/app/layout';
 import styles from '../src/app/style/TransferPage.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const TransferPage = () => {
   return (
@@ -11,7 +13,7 @@ const TransferPage = () => {
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>Transfer bancar</h1>
             <p className={styles.heroSubtitle}>
-              Investește lunar în educație printr-o donație recurentă online, de <a href="/doneaza">aici</a>.
+              Investește lunar în educație printr-o donație recurentă online, de <Link href="/doneaza">aici</Link>.
             </p>
           </div>
         </section>
@@ -42,7 +44,7 @@ const TransferPage = () => {
 
           {/* Imaginea din dreapta */}
           <div className={styles.paymentCode}>
-            <img
+            <Image width={500} height={300} 
               src="/img/gvr-people.jpg" // Pune calea către imaginea dorită
               alt="Imagine Transfer Bancar"
               className={styles.paymentImage}

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom'; // Pentru a obține ID-ul produsului din URL
 import Layout from '../src/app/layout';
 import data from '../src/app/data/produse.json';
-import styles from '../src/app/style/ProductPage.module.css'; // Stiluri personalizate
+import styles from '../src/app/style/ProductPage.module.css';
+import Image from 'next/image';
 
 const ProductPage = () => {
     // Obținem ID-ul produsului din URL
@@ -24,7 +25,8 @@ const ProductPage = () => {
             <div className={styles.productContainer}>
                 {/* Imaginea Produsului */}
                 <div className={styles.productImageWrapper}>
-                    <img
+                    <Image
+                        width={500} height={300} 
                         src={product.image}
                         alt={product.title}
                         className={styles.productImage}

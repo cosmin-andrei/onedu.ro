@@ -3,8 +3,8 @@ import Layout from '../src/app/layout';
 import styles from '../src/app/style/SponsorizeazaPage.module.css';
 import Carousel from 'react-bootstrap/Carousel'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import Image from 'next/image';
+import Link from 'next/link';
 
 const SponsorizeazaPage = () => {
   return (
@@ -24,8 +24,8 @@ const SponsorizeazaPage = () => {
     <button className={styles.sponsorButton}>Completez contractul</button>
     
     <div className={styles.sponsorLinks}>
-        <a href="#model-de-contract">Model de contract</a>
-        <a href="#detalii-fiscale">Detalii suplimentare</a>
+        <Link href="#model-de-contract">Model de contract</Link>
+        <Link href="#detalii-fiscale">Detalii suplimentare</Link>
     </div>
 
     {/* <p className={styles.sponsorExplanation}>
@@ -45,14 +45,14 @@ const SponsorizeazaPage = () => {
                 <center>
                 <Carousel className={`${styles.carousel} ${styles.carouselCustom}`} indicators={false}>
                   <Carousel.Item>
-                    <img
+                    <Image width={500} height={300} 
                       className={`${styles.carouselImage} d-block w-100`}
                       src="/img/team/bkm_centru.jpg"
                       alt="bkm_centru"
                     />
                   </Carousel.Item>
                   <Carousel.Item>
-                    <img
+                    <Image width={500} height={300} 
                       className={`${styles.carouselImage} d-block w-100`}
                       src="/img/team/tgmures_abc.jpg"
                       alt="tgmures_team"
@@ -79,22 +79,22 @@ const SponsorizeazaPage = () => {
             <h2 className={styles.sectionTitle}>Poveștile elevilor din România</h2>
             <div className={styles.cardsWrapper}>
               <div className={styles.card}>
-                <img src="img/stories/iulia.jpg" alt="Iulia" />
+                <Image width={500} height={300} src="/img/stories/iulia.jpg" alt="Iulia" />
                 <h3>Iulia, clasa a XII-a</h3>
                 <p>Iulia ne spune că nu știe ce facultate să aleagă, având nevoie de orientare în carieră.</p>
-                <a href="#">Citește povestea ei</a>
+                <Link href="#">Citește povestea ei</Link>
               </div>
               <div className={styles.card}>
-                <img src="img/stories/maya.jpg" alt="Maya" />
+                <Image width={500} height={300} src="/img/stories/maya.jpg" alt="Maya" />
                 <h3>Maya, clasa a X-a</h3>
                 <p>Maya ne povestește cât de dificil îi este să găsească informații educaționale corecte pe internet.</p>
-                <a href="#">Citește povestea ei</a>
+                <Link href="#">Citește povestea ei</Link>
               </div>
               <div className={styles.card}>
-                <img src="img/stories/stefan.jpg" alt="Stefan" />
+                <Image width={500} height={300} src="/img/stories/stefan.jpg" alt="Stefan" />
                 <h3>Ștefan, fost elev</h3>
                 <p>Ștefan visează să construiască pentru educația elevilor din România, investind în educație din 2021.</p>
-                <a href="#">Citește povestea lui</a>
+                <Link href="#">Citește povestea lui</Link>
               </div>
             </div>
           </div>
@@ -113,7 +113,7 @@ const SponsorizeazaPage = () => {
               </div>
               <div className={styles.carouselWrapper}>
                 <center>
-                    <img
+                    <Image width={500} height={300} 
                       className={`${styles.styleImage} d-block w-100`}
                       src="/img/team/bkm_centru.jpg"
                       alt="Imagine 1"
@@ -133,9 +133,9 @@ const SponsorizeazaPage = () => {
             <p>
                 <strong>Formularul poate fi depus în persoană</strong> la sediul ANAF de care aparții cu domiciliul sau trimis prin curier sau prin poștă cu scrisoare recomandată.
             </p>
-            <a href="#" className={styles.link}>
+            <Link href="#" className={styles.link}>
                 Vezi aici lista administrațiilor financiare
-            </a>
+            </Link>
             <p>
                 Descarcă formularul pre-completat cu datele Dăruiește Viață apăsând pe butonul de mai jos. <strong>Nu este nevoie să completezi și suma.</strong>
             </p>
@@ -143,7 +143,7 @@ const SponsorizeazaPage = () => {
             </div>
             <div className={styles.formColumn}>
             <p>
-                <strong>Formularul poate fi depus și online</strong> prin <a href="#" className={styles.link}>SPV (Spațiul Privat Virtual)</a> în cazul în care ai cont creat pe site-ul ANAF. Completează formularul inteligent cu datele personale și datele Asociației, bifează suma de 3,5%, validează-l și încarcă-l în SPV. Vei avea nevoie de aplicația <a href="#" className={styles.link}>Adobe Reader</a>.
+                <strong>Formularul poate fi depus și online</strong> prin <Link href="#" className={styles.link}>SPV (Spațiul Privat Virtual)</Link> în cazul în care ai cont creat pe site-ul ANAF. Completează formularul inteligent cu datele personale și datele Asociației, bifează suma de 3,5%, validează-l și încarcă-l în SPV. Vei avea nevoie de aplicația <Link href="#" className={styles.link}>Adobe Reader</Link>.
             </p>
             <p>
                 Datele fiscale pe care trebuie să le completezi pentru noi sunt: <strong>Asociația DĂRUIEȘTE VIAȚĂ</strong>, cod identificare fiscală: <strong>30563375</strong>, cont bancar: <strong>RO08 INGB 0000 9999 0317 5286</strong>.
@@ -159,7 +159,7 @@ const SponsorizeazaPage = () => {
             <div className={styles.aboutContentWrapper}>
               <div className={styles.carouselWrapper}>
                 <center>
-                <img
+                <Image width={500} height={300} 
                       className={`${styles.styleImage} d-block w-100`}
                       src="/img/team/bkm_centru.jpg"
                       alt="Imagine 1"

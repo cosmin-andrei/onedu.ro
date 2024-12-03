@@ -3,6 +3,8 @@ import Layout from '../src/app/layout';
 import styles from '../src/app/style/ParteneriPage.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import partnersData from '../src/app/data/parteneri.json'; 
+import Image from 'next/image';
+import Link from 'next/link';
 
 const ParteneriPage = () => {
   return (
@@ -22,7 +24,7 @@ const ParteneriPage = () => {
           <h2 className={styles.sectionTitle}>Sponsori</h2>
           <div className={styles.sponsoriWrapper}>
             {partnersData.sponsori.map((sponsor) => (
-              <a
+              <Link
                 key={sponsor.id}
                 href={sponsor.url}
                 target="_blank"
@@ -30,9 +32,9 @@ const ParteneriPage = () => {
                 className={styles.sponsorCardLink}
               >
                 <div className={styles.sponsorCard}>
-                  <img src={sponsor.src} alt={sponsor.alt} />
+                  <Image width={500} height={300} src={sponsor.src} alt={sponsor.alt} />
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
@@ -42,7 +44,7 @@ const ParteneriPage = () => {
           <h2 className={styles.sectionTitle}>Sponsori in-kind</h2>
           <div className={styles.sponsoriWrapper}>
             {partnersData.sponsoriInKind.map((sponsor) => (
-              <a
+              <Link
                 key={sponsor.id}
                 href={sponsor.url}
                 target="_blank"
@@ -50,9 +52,9 @@ const ParteneriPage = () => {
                 className={styles.sponsorCardLink}
               >
                 <div className={styles.sponsorCard}>
-                  <img src={sponsor.src} alt={sponsor.alt} />
+                  <Image width={500} height={300} src={sponsor.src} alt={sponsor.alt} />
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
@@ -62,7 +64,7 @@ const ParteneriPage = () => {
           <h2 className={styles.sectionTitle}>Parteneri și prieteni #teamCOR</h2>
           <div className={styles.sponsoriWrapper}>
             {partnersData.teamCOR.map((partner) => (
-              <a
+              <Link
                 key={partner.id}
                 href={partner.url}
                 target="_blank"
@@ -70,9 +72,9 @@ const ParteneriPage = () => {
                 className={styles.sponsorCardLink}
               >
                 <div className={styles.sponsorCard}>
-                  <img src={partner.src} alt={partner.alt} />
+                  <Image width={500} height={300} src={partner.src} alt={partner.alt} />
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>

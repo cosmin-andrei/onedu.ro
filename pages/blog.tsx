@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Layout from '../src/app/layout';
 import articlesData from '../src/app/data/articole.json'; 
-import styles from '../src/app/style/BlogPage.module.css'; // Stiluri personalizate
+import styles from '../src/app/style/BlogPage.module.css';
+import Image from 'next/image';
 
 const BlogPage = () => {
     // Extrage articolele din obiectul JSON
@@ -18,7 +19,7 @@ const BlogPage = () => {
         return article.category === filter;
     });
 
-    // Funcția de click pentru a redirecționa către pagina unui articol specific
+    // Funcția de click pentru a  către pagina unui articol specific
     const handleArticleClick = (id: string) => {
         window.location.href = '/blog/' + id;
     };
@@ -38,9 +39,11 @@ const BlogPage = () => {
                 >
                     <div className={styles.heroContentWrapper}>
                         <div className={styles.heroImageWrapper}>
-                            <img
+                            <Image
                                 src={articles[0].image}
                                 alt={articles[0].title}
+                                width={500}
+                                height={300}
                                 className={styles.heroImage}
                             />
                         </div>
@@ -112,7 +115,9 @@ const BlogPage = () => {
                                 className={styles.articleCard}
                                 onClick={() => handleArticleClick(article.id)}
                             >
-                                <img
+                                <Image
+                                    width={500} 
+                                    height={300} 
                                     src={article.image}
                                     alt={article.title}
                                     className={styles.articleImage}

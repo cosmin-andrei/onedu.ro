@@ -7,7 +7,7 @@
             "category": "Modernizare școli",
             "status": "Finalizat",
             "date": "Ianuarie 2025",
-            "image": "img/proiecte/scoala-onedu.jpg"
+            "image": "/img/proiecte/scoala-onedu.jpg"
         },
         {
             "id": "hub-educatie-digitala",
@@ -15,7 +15,7 @@
             "category": "Educație digitală",
             "status": "În desfășurare",
             "date": "Septembrie 2023",
-            "image": "img/proiecte/fiide10.jpg"
+            "image": "/img/proiecte/fiide10.jpg"
         }
     ]
 }

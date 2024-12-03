@@ -4,7 +4,8 @@ import DonationForm from '../src/app/components/donation/DonationForm';
 import styles from '../src/app/style/DoneazaPage.module.css';
 import Carousel from 'react-bootstrap/Carousel'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Image from 'next/image';
+import Link from 'next/link';
 
 
 const DoneazaPage = () => {
@@ -33,14 +34,14 @@ const DoneazaPage = () => {
               <div className={styles.carouselWrapper}>
                 <Carousel className={`${styles.carousel} ${styles.carouselCustom}`} indicators={false}>
                   <Carousel.Item>
-                    <img
+                    <Image width={500} height={300} 
                       className={`${styles.carouselImage} d-block w-100`}
                       src="/img/team-group/bkm_centru.jpg"
                       alt="bkm_centru"
                     />
                   </Carousel.Item>
                   <Carousel.Item>
-                    <img
+                    <Image width={500} height={300} 
                       className={`${styles.carouselImage} d-block w-100`}
                       src="/img/team-group/tgmures_abc.jpg"
                       alt="tgmures_team"
@@ -66,22 +67,22 @@ const DoneazaPage = () => {
             <h2 className={styles.sectionTitle}>Poveștile elevilor din România</h2>
             <div className={styles.cardsWrapper}>
               <div className={styles.card}>
-                <img src="img/stories/iulia.jpg" alt="Iulia" />
+                <Image width={500} height={300} src="/img/stories/iulia.jpg" alt="Iulia" />
                 <h3>Iulia, clasa a XII-a</h3>
                 <p>Iulia ne spune că nu știe ce facultate să aleagă, având nevoie de orientare în carieră.</p>
-                <a href="#">Citește povestea ei</a>
+                <Link href="#">Citește povestea ei</Link>
               </div>
               <div className={styles.card}>
-                <img src="img/stories/maya.jpg" alt="Maya" />
+                <Image width={500} height={300} src="/img/stories/maya.jpg" alt="Maya" />
                 <h3>Maya, clasa a X-a</h3>
                 <p>Maya ne povestește cât de dificil îi este să găsească informații educaționale corecte pe internet.</p>
-                <a href="#">Citește povestea ei</a>
+                <Link href="#">Citește povestea ei</Link>
               </div>
               <div className={styles.card}>
-                <img src="img/stories/stefan.jpg" alt="Stefan" />
+                <Image width={500} height={300} src="/img/stories/stefan.jpg" alt="Stefan" />
                 <h3>Ștefan, fost elev</h3>
                 <p>Ștefan visează să construiască pentru educația elevilor din România, investind în educație din 2021.</p>
-                <a href="#">Citește povestea lui</a>
+                <Link href="#">Citește povestea lui</Link>
               </div>
             </div>
           </div>
@@ -101,14 +102,14 @@ const DoneazaPage = () => {
               <div className={styles.carouselWrapper}>
                 <Carousel className={`${styles.carousel} ${styles.carouselCustom}`} indicators={false}>
                   <Carousel.Item>
-                    <img
+                    <Image width={500} height={300} 
                       className={`${styles.carouselImage} d-block w-100`}
                       src="/img/team/bkm_centru.jpg"
                       alt="Imagine 1"
                     />
                   </Carousel.Item>
                   <Carousel.Item>
-                    <img
+                    <Image width={500} height={300} 
                       className={`${styles.carouselImage} d-block w-100`}
                       src="/img/team/tgmures_abc.jpg"
                       alt="Imagine 2"
@@ -128,22 +129,22 @@ const DoneazaPage = () => {
             </h2>
             <div className={styles.cardsWrapper}>
               <div className={styles.card2}>
-                <img src="/img/planul-nostru/aptitudini.webp" alt="aptitudini" />
+                <Image width={500} height={300} src="/img/planul-nostru/aptitudini.webp" alt="aptitudini" />
                 <h3>Aptitudini și abilități</h3>
                 <p>Multe dintre abilitățile și cunoștințele tinerilor ce ies de pe băncile școlilor sunt desprinse din activități de voluntariat, youtube și social media. Școala, de cele mai multe ori, nu îi ajută în dezvoltarea aptitudinilor necesare în viața de adult.</p>
-                <a href="#">Află mai multe</a>
+                <Link href="#">Află mai multe</Link>
               </div>
               <div className={styles.card2}>
-                <img src="/img/planul-nostru/management.png" alt="Management" />
+                <Image width={500} height={300} src="/img/planul-nostru/management.png" alt="Management" />
                 <h3>Management școlar</h3>
                 <p>Administrarea școlilor în mod digital este primul pas într-o școală modernă și cu perspectivă de viitor. Miile de hârtii și comisii pe care o școală trebuie să le realizeze este un impas în păstrarea focusului pe dezvoltarea elevului.</p>
-                <a href="#">Află mai multe</a>
+                <Link href="#">Află mai multe</Link>
               </div>
               <div className={styles.card2}>
-                <img src="/img/planul-nostru/online.png" alt="educatie in online" />
+                <Image width={500} height={300} src="/img/planul-nostru/online.png" alt="educatie in online" />
                 <h3>Educație în online</h3>
                 <p>Elevii au nevoie ca informația să fie atractivă și corect livrată. Sursele multiple din online pot contura cunoștințe greșite, astfel că este imperios necesar ca educația din online să fie aliniată la datele științifice.</p>
-                <a href="#">Află mai multe</a>
+                <Link href="#">Află mai multe</Link>
               </div>
             </div>
           </div>

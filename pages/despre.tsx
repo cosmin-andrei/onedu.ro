@@ -2,6 +2,8 @@ import React from 'react';
 import Layout from '../src/app/layout';
 import styles from '../src/app/style/DesprePage.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Image from 'next/image';
+import Link from 'next/link';
 
 
 const DesprePage = () => {
@@ -22,10 +24,12 @@ const DesprePage = () => {
           <div className={styles.container}>
             <div className={styles.aboutContentWrapper}>
               <div className={styles.carouselWrapper}>
-                    <img
+                    <Image
                       className={`${styles.styleImage} d-block w-100`}
                       src="/img/team/tgmures_abc.jpg"
                       alt="tgmures_team"
+                      width={500}
+                      height={300}
                     />
               </div>
               <div className={styles.aboutTextWrapper}>
@@ -48,19 +52,34 @@ const DesprePage = () => {
             <h2 className={styles.sectionTitle}>Ce facem pentru România</h2>
             <div className={styles.cardsWrapper}>
               <div className={styles.card}>
-                <img src="img/about/educatie.jpg" alt="Educatie" />
+                <Image 
+                  src="/img/about/educatie.jpg" 
+                  alt="Educatie" 
+                  width={500} 
+                  height={300} 
+                />
                 <h3>Soluții digitale gratuite</h3>
                 <p>Construim aplicații online pentru elevi, profesori, părinți, școli, tineri și organizații non-guvernamentale.</p>
-                <a href="/planul-nostru">Vezi planul nostru</a>
+                <Link href="/planul-nostru">Vezi planul nostru</Link>
               </div>
               <div className={styles.card}>
-                <img src="img/about/scoli.jpg" alt="Scoli" />
+                <Image 
+                  src="/img/about/scoli.jpg" 
+                  alt="Scoli" 
+                  width={500} 
+                  height={300} 
+                />
                 <h3>Renovăm școli</h3>
                 <p></p>
-                <a href="/scoala-onedu">Vezi conceptul Școala ONedu</a>
+                <Link href="/scoala-onedu">Vezi conceptul Școala ONedu</Link>
               </div>
               <div className={styles.card}>
-                <img src="img/about/youth.jpg" alt="Youth" />
+                <Image 
+                  src="/img/about/youth.jpg" 
+                  alt="Youth" 
+                  width={500} 
+                  height={300} 
+                />
                 <h3>Tineri și voluntariat</h3>
                 <p>Construim programe și evenimente destinate acestora.</p>
                 <a href="https://ivoluntar.org">Vezi Centrul iVoluntar</a>
@@ -103,17 +122,17 @@ const DesprePage = () => {
             <h2 className={styles.sectionTitle}>Echipa Asociației ONedu</h2>
             <div className={styles.teamWrapper}>
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/stefan.png" alt="Ștefan" />
+                    <Image className={styles.teamImage} src="/img/team/stefan.png" alt="Ștefan" width={500} height={300} />
                     <h3 className={styles.teamName}>Andrei-Ștefan Poenaru</h3>
                     <p className={styles.teamRole}>președinte</p>
                 </div>
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/crina.png" alt="Crina Rusu" />
+                    <Image className={styles.teamImage} src="/img/team/crina.png" alt="Crina Rusu" width={500} height={300} />
                     <h3 className={styles.teamName}>Crina Rusu</h3>
                     <p className={styles.teamRole}>vicepreședinte</p>
                 </div>
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/mariana.png" alt="Mariana Uhren" />
+                    <Image className={styles.teamImage} src="/img/team/mariana.png" alt="Mariana Uhren" width={500} height={300} />
                     <h3 className={styles.teamName}>Mariana Uhren</h3>
                     <p className={styles.teamRole}>secretar</p>
                 </div>
@@ -121,18 +140,18 @@ const DesprePage = () => {
 
             <div className={styles.teamWrapper}>
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/raly.png" alt="Raly" />
+                    <Image className={styles.teamImage} src="/img/team/raly.png" alt="Raly" width={500} height={300} />
                     <h3 className={styles.teamName}>Raly Țonea</h3>
                     <p className={styles.teamRole}>director resurse umane</p>
                 </div>
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/claudiu.png" alt="Claudiu Chiorean" />
+                    <Image className={styles.teamImage} src="/img/team/claudiu.png" alt="Claudiu Chiorean" width={500} height={300} />
                     <h3 className={styles.teamName}>Claudiu Chiorean</h3>
                     <p className={styles.teamRole}>asistent manager</p>
                 </div>
 
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/darius.png" alt="Darius Bordeanu" />
+                    <Image className={styles.teamImage} src="/img/team/darius.png" alt="Darius Bordeanu" width={500} height={300} />
                     <h3 className={styles.teamName}>Darius Bordeanu</h3>
                     <p className={styles.teamRole}>web developer</p>
                 </div>
@@ -141,20 +160,20 @@ const DesprePage = () => {
 
             <div className={styles.teamWrapper}>
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/florin.png" alt="Florin Baciu" />
+                    <Image className={styles.teamImage} src="/img/team/florin.png" alt="Florin Baciu" width={500} height={300} />
                     <h3 className={styles.teamName}>Florin Baciu</h3>
                     <p className={styles.teamRole}>coordonator voluntari</p>
                     <p className={styles.teamProject}>TEDxAvram Iancu Street</p>
                 </div>
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/bianca.png" alt="Bianca Țuligă" />
+                    <Image className={styles.teamImage} src="/img/team/bianca.png" alt="Bianca Țuligă" width={500} height={300} />
                     <h3 className={styles.teamName}>Bianca Țuligă</h3>
                     <p className={styles.teamRole}>manager comunicare</p>
                     <p className={styles.teamProject}>TEDxAvram Iancu Street</p>
                 </div>
 
                 <div className={styles.teamMember}>
-                    <img className={styles.teamImage} src="/img/team/darius-merian.jpg" alt="Darius" />
+                    <Image className={styles.teamImage} src="/img/team/darius-merian.jpg" alt="Darius" width={500} height={300} />
                     <h3 className={styles.teamName}>Darius Merian</h3>
                     <p className={styles.teamRole}>manager comunicare</p>
                     <p className={styles.teamProject}>Gala Voluntariatului</p>
@@ -165,17 +184,15 @@ const DesprePage = () => {
         </section>
 
         <section className={styles.visionSection}>
-  <div className={styles.container}>
-    <h2 className={styles.visionTitle}>Credem în transparența faptelor bune</h2>
-    <p className={styles.visionText}>
-        Publicăm anual rapoarte de activitate și financiare pentru a-ți arăta cum folosim investiția ta în educație.<br/>
-        Funcționăm în baza Statutului și a regulamentelor interne, disponibile în secțiunea de transparență.
-   </p>
-    <button className={styles.digitalizationButton} onClick={() => window.location.href = '/rapoarte'}>Vezi rapoartele noastre</button>
-  </div>
-</section>
-
-
+          <div className={styles.container}>
+            <h2 className={styles.visionTitle}>Credem în transparența faptelor bune</h2>
+            <p className={styles.visionText}>
+                Publicăm anual rapoarte de activitate și financiare pentru a-ți arăta cum folosim investiția ta în educație.<br/>
+                Funcționăm în baza Statutului și a regulamentelor interne, disponibile în secțiunea de transparență.
+            </p>
+            <button className={styles.digitalizationButton} onClick={() => window.location.href = '/rapoarte'}>Vezi rapoartele noastre</button>
+          </div>
+        </section>
       </div>
     </Layout>
   );

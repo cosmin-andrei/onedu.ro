@@ -3,6 +3,7 @@ import SignatureCanvas from 'react-signature-canvas';
 import Layout from '../src/app/layout'; // Layout global
 import judeteData from '../src/app/data/judete.json'; // Importăm JSON-ul cu județe și orașe
 import styles from '../src/app/style/Formular230Page.module.css'; // Stiluri pentru pagină
+import Link from 'next/link';
 
 // Interfața pentru JSON
 interface Localitate {
@@ -250,7 +251,7 @@ const Formular230Page: React.FC = () => {
             {isDrawing && (
               <div className={styles.signaturePad}>
                 <SignatureCanvas
-                  ref={sigCanvas}
+                  // ref={sigCanvas}
                   penColor="black"
                   canvasProps={{
                     width: 500,
@@ -277,8 +278,8 @@ const Formular230Page: React.FC = () => {
                   onChange={(e) => setIsAgreed(e.target.checked)}
                 />
                 <label htmlFor="terms">
-                  Sunt de acord cu <a href="/termeni" target="_blank" rel="noopener noreferrer">Termenii</a> și{' '}
-                  <a href="/confidentialitate" target="_blank" rel="noopener noreferrer">Politica de Confidențialitate</a>
+                  Sunt de acord cu <Link href="/termeni" target="_blank" rel="noopener noreferrer">Termenii</Link> și{' '}
+                  <Link href="/confidentialitate" target="_blank" rel="noopener noreferrer">Politica de Confidențialitate</Link>
                 </label>
               </div>
             </div>

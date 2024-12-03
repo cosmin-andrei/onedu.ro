@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Layout from '../src/app/layout';
 import data from '../src/app/data/produse.json'; 
-import styles from '../src/app/style/MerchPage.module.css'; // Stiluri personalizate
+import styles from '../src/app/style/MerchPage.module.css'; 
+import Image from 'next/image';
 
 const MerchPage = () => {
     // Extragem lista de produse din fișierul JSON
@@ -100,7 +101,7 @@ const MerchPage = () => {
                                 className={styles.card}
                                 onClick={() => handleProductClick(product.id)}
                             >
-                                <img src={product.image} alt={product.title} />
+                                <Image width={500} height={300} src={product.image} alt={product.title} />
                                 <h3 className={styles.sectionTitle}>{product.title}</h3>
                                 <div className={styles.productDetails}>
                                     <span className={styles.productCategory}>{product.category}</span>
