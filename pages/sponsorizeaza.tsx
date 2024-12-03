@@ -13,12 +13,6 @@ const SponsorizeazaPage = () => {
   const [sumaSponsorizata, setSumaSponsorizata] = useState(0);
   const sumaDonare = Math.max(0, 0.20 * (profit * 0.16) - sumaSponsorizata);
 
-  const handleCalculate = () => {
-    const impozitPeProfit = profit * 0.16;
-    const suma = 0.2 * impozitPeProfit - sumaSponsorizata;
-    setSumaSponsorizata(suma > 0 ? suma : 0); // Dacă suma este negativă, se setează la 0
-  };
-
   const handleInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     e.target.style.borderColor = '#16366d';
   };
