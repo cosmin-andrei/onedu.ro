@@ -1,41 +1,80 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../src/app/layout';
 import styles from '../src/app/style/SponsorizeazaPage.module.css';
 import Carousel from 'react-bootstrap/Carousel'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import '../src/app/components/calculator';
 
 const SponsorizeazaPage = () => {
+  // State pentru calculator
+  const [profit, setProfit] = useState(0);
+  const [sumaSponsorizata, setSumaSponsorizata] = useState(0);
+  const sumaDonare = Math.max(0, 0.20 * (profit * 0.16) - sumaSponsorizata);
+
+  const handleCalculate = () => {
+    const impozitPeProfit = profit * 0.16;
+    const suma = 0.2 * impozitPeProfit - sumaSponsorizata;
+    setSumaSponsorizata(suma > 0 ? suma : 0); // Dacă suma este negativă, se setează la 0
+  };
+
+  const handleInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    e.target.style.borderColor = '#16366d';
+  };
+
+  const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    e.target.style.borderColor = '#d3d3d3';
+  };
+
   return (
     <Layout>
       <main className={styles.sponsorizeazaPage}>
         {/* Hero Section */}
         <section className={styles.heroSection}>
-          <div className={styles.heroContentWrapper}>
-            <div className={styles.heroTextWrapper}>
+          <div className={styles.heroContent}>
               <h1 className={styles.heroTitle}>Modernizăm educația împreună.</h1>
               <p className={styles.heroSubtitle}>
-            Anual părinții scot bani din buzunar pentru accesul elevilor din România la educație. 
-            Ajută-ne să construim soluții digitale în educație și să renovăm împreună școli.</p>
-            </div>
-            <div className={styles.sponsorSectionBox}>
-    <h2 className={styles.sponsorTitle}>Completează contractul și susține educația din România.</h2>
-    <button className={styles.sponsorButton}>Completez contractul</button>
-    
-    <div className={styles.sponsorLinks}>
-        <Link href="#model-de-contract">Model de contract</Link>
-        <Link href="#detalii-fiscale">Detalii suplimentare</Link>
-    </div>
+                  Construim un hub de servicii digitale în educație pentru elevi, profesori, școli și părinți.
+                  Modernizăm școlile din România. Ajută-ne să parcurgem harta spre o Românie digitală și modernă.
+              </p>
 
-    {/* <p className={styles.sponsorExplanation}>
-        Afla mai multe detalii despre modul în care pot fi realizate sponsorizările în anul 2024 și despre regimul de impozitare al acestora.
-    </p> */}
-</div>
+              <div className={styles.cardContainer}>
+                  <div className={styles.heroCard}>
+                      <div className={styles.heroCardTop}>
+                          <h2 className={styles.cardTitle}>Anul 2024</h2>
+                          <p className={styles.cardText}>
+                              Completează contractul și investește în educația din România în doar 5 minute. Vei primi toate detaliile despre investiția ta după completarea contractului.
+                          </p>
+                      </div>
+                      <div className={styles.heroCardBottom}>
+                          <Link href="/contract-2024" className={styles.cardButton}>Completează contractul</Link>
+                          <div className={styles.cardLinks}>
+                              <Link href="/model-de-contract" className={styles.cardLink}>Model de contract</Link>
+                              <Link href="/informatii-suplimentare" className={styles.cardLink}>Informații suplimentare</Link>
+                          </div>
+                      </div>
+                  </div>
 
-    
+                  <div className={styles.heroCard}>
+                      <div className={styles.heroCardTop}>
+                          <h2 className={styles.cardTitle}>Anul 2023</h2>
+                          <p className={styles.cardText}>
+                              Dacă sponsorizările făcute în 2023 nu au atins plafonul maxim stabilit de lege, completează contractul
+                              cu suma rămasă și depune la ANAF Declarația 177 până la 25 decembrie.
+                          </p>
+                      </div>
+                      <div className={styles.heroCardBottom}>
+                          <Link href="/contract-2023" className={styles.cardButton}>Completează contractul</Link>
+                          <div className={styles.cardLinks}>
+                              <Link href="/model-de-contract" className={styles.cardLink}>Model de contract</Link>
+                              <Link href="/informatii-suplimentare" className={styles.cardLink}>Informații suplimentare</Link>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </section>
+      </section>
 
         {/* About Section */}
         <section className={styles.aboutSection}>
@@ -73,8 +112,8 @@ const SponsorizeazaPage = () => {
           </div>
         </section>
 
-         {/* Povestile elevilor */}
-         <section className={styles.storiesSection}>
+        {/* Povestile elevilor */}
+        <section className={styles.storiesSection}>
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>Poveștile elevilor din România</h2>
             <div className={styles.cardsWrapper}>
@@ -100,11 +139,10 @@ const SponsorizeazaPage = () => {
           </div>
         </section>
 
-        {/* unde merge investitia Section */}
+        {/* Unde merge investiția Section */}
         <section className={styles.aboutSection}>
           <div className={styles.container}>
             <div className={styles.aboutContentWrapper}>
-              
               <div className={styles.aboutTextWrapper}>
                 <h2 className={styles.aboutTitle}>Unde merge investiția ta?</h2>
                 <p className={styles.aboutText}>
@@ -124,64 +162,60 @@ const SponsorizeazaPage = () => {
           </div>
         </section>
 
-        <section className={styles.formSubmission}>
-        <h2 className={styles.sectionTitle}>
-            Vreau să completez și să depun singur Formularul 230
-        </h2>
-        <div className={styles.formGrid}>
-            <div className={styles.formColumn}>
-            <p>
-                <strong>Formularul poate fi depus în persoană</strong> la sediul ANAF de care aparții cu domiciliul sau trimis prin curier sau prin poștă cu scrisoare recomandată.
-            </p>
-            <Link href="#" className={styles.link}>
-                Vezi aici lista administrațiilor financiare
-            </Link>
-            <p>
-                Descarcă formularul pre-completat cu datele Dăruiește Viață apăsând pe butonul de mai jos. <strong>Nu este nevoie să completezi și suma.</strong>
-            </p>
-            <button className={styles.downloadButton}>Descarcă formularul 230 pre-completat</button>
-            </div>
-            <div className={styles.formColumn}>
-            <p>
-                <strong>Formularul poate fi depus și online</strong> prin <Link href="#" className={styles.link}>SPV (Spațiul Privat Virtual)</Link> în cazul în care ai cont creat pe site-ul ANAF. Completează formularul inteligent cu datele personale și datele Asociației, bifează suma de 3,5%, validează-l și încarcă-l în SPV. Vei avea nevoie de aplicația <Link href="#" className={styles.link}>Adobe Reader</Link>.
-            </p>
-            <p>
-                Datele fiscale pe care trebuie să le completezi pentru noi sunt: <strong>Asociația DĂRUIEȘTE VIAȚĂ</strong>, cod identificare fiscală: <strong>30563375</strong>, cont bancar: <strong>RO08 INGB 0000 9999 0317 5286</strong>.
-            </p>
-            <button className={styles.downloadButton}>Descarcă formularul inteligent</button>
-            </div>
-        </div>
-        </section>
+      <section className={styles.sponsorizeazaSection}>
+        <h2 className={styles.sectionTitle}>Află cât poate dona firma ta pentru educație</h2>
+        <p className={styles.sectionSubtitle}>
+         Modernizăm educația din România <strong>împreună</strong>.
+        </p>
+        <div className={styles.calculator}>
+           <div className={styles.inputGroup}>
+              <label className={styles.label}>Profit brut</label>
+              <div className={styles.amountInputWrapper}>
+              <input
+                type="number"
+                min="0"
+                id="profit"
+                className={styles.amountInput}
+                value={profit}
+                placeholder="Introduceți profitul brut"
+                onChange={(e) => setProfit(parseFloat(e.target.value) || 0)}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
+              />
 
-        {/* Detalii fiscale section*/}
-        <section className={styles.aboutSection}>
-          <div className={styles.container}>
-            <div className={styles.aboutContentWrapper}>
-              <div className={styles.carouselWrapper}>
-                <center>
-                <Image width={500} height={300} 
-                      className={`${styles.styleImage} d-block w-100`}
-                      src="/img/team/bkm_centru.jpg"
-                      alt="Imagine 1"
-                    />
-                </center>
+               <span className={styles.amountSuffix}>RON</span>
+               </div>
+            
+              <label className={styles.label}>Suma sponsorizată în anul 2024</label>
+              <div className={styles.amountInputWrapper}>
+                <input
+                type="number"
+                className={styles.amountInput}
+                id="suma-sponsorizata"
+                value={sumaSponsorizata}
+                min="0"
+                placeholder="Introduceți suma sponsorizată"
+                onChange={(e) => setSumaSponsorizata(parseFloat(e.target.value) || 0)}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
+              />
+               <span className={styles.amountSuffix}>RON</span>
               </div>
-                <div className={styles.aboutTextWrapper}>
-                <h2 className={styles.aboutTitle}>Detalii fiscale</h2>
-                <ul className={styles.aboutText}>
-                    <li>Formularul 230 se completează de către persoanele fizice care realizează venituri din salarii. Procentul nu trebuie să depăşească plafonul de 3,5% din impozitul pe venit.</li>
-                    <li> Nu pot redirecționa 3,5% din impozitul pe venit: PFA-urile, titularii de întreprinderi individuale și familiale și alții care obțin venituri din activități independente (profesii liberale), cei care obțin venituri din drepturi de autor și pensii, în general cei care puteau face redirecționarea prin completarea formularului 230 sau a rubricii specifice din Declarația Unică (formularul 212). Modificarea este conform OUG 115/2023.
-                    </li>
-                 </ul>
-                </div>
-
-            </div>
           </div>
-        </section>
+
+          {/* Partea dreaptă cu rezultatul calculat */}
+          <div className={styles.calculatorResult}>
+            <span className={styles.resultText}>{sumaDonare.toFixed(2)} RON</span>
+            <span className={styles.sectionSubtitle}>20% din impozitul pe profit</span>
+          </div>
+        </div>
+
+        <Link href="/contract" className={styles.cardButton2}>Completează contractul acum</Link>
+
+      </section>
 
 
       </main>
-
     </Layout>
   );
 };

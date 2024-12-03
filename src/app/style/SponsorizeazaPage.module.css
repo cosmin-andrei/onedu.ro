@@ -1,80 +1,92 @@
 .heroSection {
-    width: 100%;
-    background: url('/img/hero-bg.jpg') no-repeat center center;
-    background-size: cover;
-    padding: 3rem;
-    display: flex;
-    justify-content: space-between; /* Elemente în linie */
-    align-items: center; /* Elemente centrate pe verticală */
-    margin: 0;
-  }
-  
-  .heroContentWrapper {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: nowrap; /* Previne mutarea elementelor pe o altă linie */
-    align-items: center;
-    justify-content: space-between; /* Elemente distribuite spațios */
-    width: 100%;
-  }
-  
-  .heroTextWrapper {
-    max-width: 50%; /* Controlează spațiul ocupat */
-    color: #4a4f54;
-  }
-  
-  .heroTitle {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .heroSubtitle {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: #555;
-  }
-  
-  .heroCTA {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 40%; /* Controlează dimensiunea secțiunii CTA */
-  }
-  
-  .heroCTA h2 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #004f29;
-    margin-bottom: 1rem;
-  }
-  
-  .heroCTA p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-  }
-  
-  .ctaButton {
-    display: inline-block;
-    background-color: #1b0177;
-    color: #ffffff;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .ctaButton:hover {
-    background-color: #120560;
-  }
-  
+  padding: 4rem 2rem;
+  background-color: #d0e3ff; /* Culoarea de fundal a secțiunii Hero */
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left; /* Aliniază la stânga */
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1rem;
+  margin-left: 2rem; 
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  margin-left: 2rem; 
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 2rem;
+  flex-wrap: wrap; 
+  margin-left: 2rem; 
+}
+
+.heroCard {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 500px;
+  text-align: left;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1b0177;
+  margin-bottom: 1rem;
+}
+
+.cardText {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.cardButton {
+  background-color: #1b0177; /* Culoarea butonului */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.cardButton:hover {
+  background-color: #1b0177b8; /* Culoarea butonului la hover */
+}
+
+.cardLinks {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: #1b0177;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 
   /* ABOUT SECTION */
 
@@ -296,62 +308,118 @@
     color: #333;
   }
   
-  /* Stilurile pentru caseta din secțiunea Sponsorizează */
-.sponsorSectionBox {
-    background-color: white; /* Păstrează culoarea originală */
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* SPONSORSHIP CALCULATOR */
+/* Secțiunea Calculator Sponsorizare */
+.sponsorizeazaSection {
+  background-color: #D2E2FF;
+  padding: 4rem 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Stilul pentru textul principal al casetei */
-.sponsorTitle {
-    font-size: 1.8rem;  /* Dimensiune asemănătoare imaginii */
-    font-weight: 600;  /* Font-weight potrivit pentru titlu */
-    color: #000000;  /* Păstrează culoarea originală */
-    margin-bottom: 2rem;
+.sectionSubtitle {
+  font-size: 1.2rem; /* Dimensiune mărită */
+  color: #555;
+  text-align: left; /* Aliniere la stânga */
 }
 
-/* Stilul pentru butonul principal */
-.sponsorButton {
-    display: inline-block;
-    padding: 10px 20px;  /* Ajustare pentru a semăna cu imaginea */
-    background-color: #1b0177; /* Păstrează culoarea originală a butonului */
-    color: #ffffff;  /* Păstrează culoarea originală */
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;  /* Dimensiune potrivită pentru text */
-    font-weight: bold;  /* Asigurăm că textul este accentuat */
-    cursor: pointer;
-    text-align: center;
-    margin-bottom: 1rem; /* Spațiu între buton și restul secțiunii */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+.calculator {
+  display: flex;
+  align-items: stretch; /* Face ambele coloane să aibă aceeași înălțime */
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 70%;
+  margin: 0 auto;
+  gap: 4rem; /* Distanță între coloane */
 }
 
-.sponsorButton:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.inputGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
 }
 
-/* Stilurile pentru hyperlinkurile de sub buton */
-.sponsorLinks {
-    display: flex;
-    gap: 1rem; /* Spațiu între fiecare hyperlink */
-    margin-bottom: 1rem;  /* Spațiu între linkuri și textul explicativ */
+.calculatorResult {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  height: 100%;
 }
 
-.sponsorLinks a {
-    font-size: 1rem;
-    color: #000000; /* Păstrează culoarea originală */
-    text-decoration: underline;
-    font-weight: 600;  /* Font-weight pentru a le scoate în evidență */
+
+.label {
+  font-size: 1rem; 
+  font-weight: bold;
+  color: #4a4f54;
+  text-align: left; 
 }
 
-.sponsorLinks a:hover {
-    color: #000000d9;  /* Efect de hover pentru un contrast mai bun */
+.amountInputWrapper {
+  display: flex;
+  align-items: center;
+  position: relative; /* Wrapper-ul pentru poziționarea absolută */
 }
 
-/* Textul explicativ de sub hyperlinkuri */
-.sponsorExplanation {
-    font-size: 0.9rem;  /* Dimensiune asemănătoare cu imaginea */
-    color: #000000;  /* Ajustare pentru un contrast mai bun */
+.amountInput {
+  flex: 1;
+  padding: 0.5rem; 
+  padding-left: 1rem; /* Spațiu pentru textul utilizatorului */
+  padding-right: 3rem; /* Lasă spațiu suficient pentru "RON" */
+  font-weight: bold;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.amountInput:focus {
+  outline: none;
+  border-color: #1b0177; /* Border color la focus */
+}
+
+.amountSuffix {
+  position: absolute;
+  right: 10px; /* Poziționează "RON" în partea dreaptă a câmpului */
+  top: 50%; /* Centrare pe verticală */
+  transform: translateY(-50%); /* Aliniere verticală perfectă */
+  font-size: 0.9rem;
+  color: #888;
+  pointer-events: none; /* Evită interferențele cu utilizatorul */
+}
+
+
+.resultText {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1b0177;
+}
+
+.amountInput::-webkit-outer-spin-button,
+.amountInput::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Elimină săgețile în Chrome, Safari, Edge */
+  margin: 0;
+}
+
+.cardButton2 {
+  background-color: #1b0177; /* Culoarea butonului */
+  color: #fff;
+  padding: 10px 100px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 3rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 1.5rem;
 }
