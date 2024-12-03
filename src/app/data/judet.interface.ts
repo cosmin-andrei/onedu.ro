@@ -6,6 +6,6 @@ export interface Judet {
 
 export interface Localitati {
     nume: string;
-    simplu: string;
-    comuna: string;
+    simplu?: string;
+    comuna?: string;
 }
