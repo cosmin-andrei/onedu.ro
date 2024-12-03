@@ -1,4 +1,4 @@
-import {Judet} from "../app/data/judet.interface";
+import {Judet} from "./judet.interface";
 
 export const Judete: Judet[] = [
     {

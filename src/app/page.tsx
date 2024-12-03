@@ -1,16 +1,6 @@
-import { GetServerSideProps } from 'next';
+import { redirect } from 'next/navigation';
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    redirect: {
-      destination: '/doneaza',
-      permanent: false,
-    },
-  };
-};
-
-const Page = () => {
-  return null; // Acest component nu va fi afișat pentru că pagina se redirecționează.
-};
-
-export default Page;
+export default function Page() {
+  redirect('/doneaza'); // Efectuează redirecționarea directă la ruta dorită.
+  return null; // Componenta nu va fi afișată, pentru că pagina se redirecționează.
+}

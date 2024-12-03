@@ -9,7 +9,6 @@ import { FaUserCircle, FaShoppingCart, FaHeart, FaChevronDown } from 'react-icon
 const Header = () => {
   const [donateMenuOpen, setDonateMenuOpen] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('RO');
 
   return (
     <header className={styles.header}>
