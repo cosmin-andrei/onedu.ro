@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import Layout from '../src/app/layout'; // Layout global
-import judeteData from '../src/data/judete.json'; // Importăm JSON-ul cu județe și orașe
+import judeteData from '../src/app/data/judete.json'; // Importăm JSON-ul cu județe și orașe
 import styles from '../src/app/style/Formular230Page.module.css'; // Stiluri pentru pagină
 
 // Interfața pentru JSON
