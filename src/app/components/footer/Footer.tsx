@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -10,9 +10,9 @@ const Footer = () => {
       <div className={styles.columnSmall}>
           <h3 className={styles.columnHeading}>Donează</h3>
           <ul className={styles.columnList}>
-            <li><Link href="/donatii-online">Donează online</Link></li>
-            <li><Link href="/transfer-bancar">Transfer bancar</Link></li>
-            <li><Link href="/redirectioneaza-3-5">Redirecționează 3.5%</Link></li>
+            <li><Link href="/doneaza">Donează online</Link></li>
+            <li><Link href="/transfer">Transfer bancar</Link></li>
+            <li><Link href="/redirectioneaza">Redirecționează 3.5%</Link></li>
             <li><Link href="/sms">Donează SMS</Link></li>
           </ul>
         </div>
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className={styles.columnSmall}>
           <h3 className={styles.columnHeading}>Organizație</h3>
           <ul className={styles.columnList}>
-            <li><Link href="/despre-noi">Despre noi</Link></li>
+            <li><Link href="/despre">Despre noi</Link></li>
             <li><Link href="/proiecte">Proiecte</Link></li>
             <li><Link href="/rapoarte">Rapoarte</Link></li>
             <li><Link href="/blog">Blog</Link></li>
@@ -45,7 +45,7 @@ const Footer = () => {
             <button type="submit" className={styles.subscribeButtonInline}>Rămâi la curent</button>
           </form>
           <div className={styles.socialIconsTop}>
-            <Link href="https://facebook.com/ONeduRomania" className={styles.socialIconTop}><FaFacebookF /></Link>
+            <Link href="https://facebook.com/ONeduRomania" className={styles.socialIconTop}><FaFacebook /></Link>
             <Link href="https://instagram.com/onedu.romania" className={styles.socialIconTop}><FaInstagram /></Link>
             <Link href="https://tiktok.com/@onedu.ro" className={styles.socialIconTop}><FaTiktok /></Link>
             <Link href="https://linkedin.com/company/onedu" className={styles.socialIconTop}><FaLinkedinIn /></Link>

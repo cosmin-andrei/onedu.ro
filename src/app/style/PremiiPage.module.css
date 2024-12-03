@@ -1,0 +1,85 @@
+/* Hero Section - Ajustează înălțimea și poziționarea textului */
+.heroSection {
+  width: 100vw;
+  height: 30vh; 
+  background-color: #D2E2FF;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+.heroContentWrapper {
+  display: flex;
+  gap: 2rem; /* Ajustează distanța dintre elemente */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start; /* Asigură că textul rămâne pe partea stângă */
+}
+
+.heroTextWrapper {
+  max-width: 700px;
+  color: #000000;
+  margin-left: 2rem; /* Asigură că textul nu are spațiu pe partea stângă */
+}
+
+.heroTitle {
+  font-size: 2rem; /* Mărim fontul pentru un impact mai mare */
+  font-weight: bold;
+}
+
+  /* premii */
+  .storiesSection {
+    padding: 3rem 0;
+}
+
+.cardsWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 1rem 1rem;
+}
+
+.card a {
+    display: inline-block;
+    padding: 0.5rem;
+    color: #1b0177b8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}

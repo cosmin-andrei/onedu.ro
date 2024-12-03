@@ -38,6 +38,7 @@ const Header = () => {
                 <li><Link href="/transfer">Transfer bancar</Link></li>
                 <li><Link href="/sms">SMS</Link></li>
                 <li><Link href="/redirectioneaza">Redirecționează 3,5% </Link></li>
+                <li><Link href="/campanii">Campania ta </Link></li>
               </ul>
             )}
           </li>
@@ -46,9 +47,6 @@ const Header = () => {
           </li>
           <li className={styles.navItem}>
             <Link href="/sponsorizeaza" className={styles.navLink}>Sponsorizează 20%</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/campanii" className={styles.navLink}>Campania ta</Link>
           </li>
           <li className={styles.navItem}>
             <Link href="/merch" className={styles.navLink}>Merch</Link>
@@ -67,12 +65,11 @@ const Header = () => {
                 onMouseEnter={() => setAboutMenuOpen(true)}
                 onMouseLeave={() => setAboutMenuOpen(false)}
               >
-                <li><Link href="/despre-noi">Despre noi</Link></li>
+                <li><Link href="/despre">Despre noi</Link></li>
                 <li><Link href="/proiecte">Proiecte</Link></li>
                 <li><Link href="/premii">Premii</Link></li>
                 <li><Link href="/rapoarte">Rapoarte</Link></li>
-                <li><Link href="/parteneri">Parteneri</Link></li>
-                {/* <li><Link href="/contact">Contact</Link></li> */}
+                <li><Link href="/parteneri">Susținători</Link></li>
               </ul>
             )}
           </li>

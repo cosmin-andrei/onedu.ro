@@ -1,0 +1,89 @@
+/* Hero Section - Ajustează înălțimea și poziționarea textului */
+.heroSection {
+    width: 100vw;
+    height: 30vh; 
+    background-color: #D2E2FF;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .heroContentWrapper {
+    display: flex;
+    gap: 2rem; /* Ajustează distanța dintre elemente */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start; /* Asigură că textul rămâne pe partea stângă */
+  }
+  
+  .heroTextWrapper {
+    max-width: 700px;
+    color: #000000;
+    margin-left: 2rem; /* Asigură că textul nu are spațiu pe partea stângă */
+  }
+  
+  .heroTitle {
+    font-size: 2rem; /* Mărim fontul pentru un impact mai mare */
+    font-weight: bold;
+  }
+
+  .contactInfoWrapper {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    gap: 50px; /* Distanțare între elemente */
+    margin: 20px 0;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+  
+  .contactItem {
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opțional pentru umbră */
+  }
+  
+  .contactIcon {
+    font-size: 30px;
+    color: #1b0177;
+  }
+  
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+      color: #1b0177;
+      text-decoration: none;
+      font-weight: bold;
+  }
+  
+  .contactLabel {
+    font-size: 13px;
+    color: #3e3e3e;
+    font-weight: bold;
+  }
+
+  .contactTitle{
+    font-size: 1rem; /* Mărim fontul pentru un impact mai mare */
+    font-weight: bold;
+  }
+
+  .contactInfo2 {
+    display: flex;
+    margin-top: 0.5rem;
+    flex-direction: column;
+      color: #373737;
+      text-decoration: none;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem; /* Mărim fontul pentru un impact mai mare */
+    font-weight: bold;
+    text-align: center;
+  }

@@ -1,0 +1,20 @@
+{
+    "products": [
+        {
+            "id": "cercei-dv",
+            "title": "Cercei DV",
+            "category": "Bijuterii",
+            "price": 30,
+            "image": "/img/produse/cercei-dv.jpg",
+            "description": "Cerceii DV sunt un cadou cu sens. Pentru tine sau pentru cineva drag ție..."
+        },
+        {
+            "id": "tricou-educatie",
+            "title": "Tricou Educație",
+            "category": "Tricouri",
+            "price": 50,
+            "image": "/img/produse/tricou-educatie.jpg",
+            "description": "Tricoul Educație este disponibil în varianta Feminin și Masculin..."
+        }
+    ]
+}

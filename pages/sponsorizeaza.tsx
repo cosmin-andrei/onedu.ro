@@ -1,16 +1,15 @@
 import React from 'react';
 import Layout from '../src/app/layout';
-import DonationForm from '../src/app/components/donation/DonationForm';
-import styles from '../src/app/style/DoneazaPage.module.css';
+import styles from '../src/app/style/SponsorizeazaPage.module.css';
 import Carousel from 'react-bootstrap/Carousel'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-const DoneazaPage = () => {
+const SponsorizeazaPage = () => {
   return (
     <Layout>
-      <main className={styles.doneazaPage}>
+      <main className={styles.sponsorizeazaPage}>
         {/* Hero Section */}
         <section className={styles.heroSection}>
           <div className={styles.heroContentWrapper}>
@@ -20,9 +19,21 @@ const DoneazaPage = () => {
             Anual părinții scot bani din buzunar pentru accesul elevilor din România la educație. 
             Ajută-ne să construim soluții digitale în educație și să renovăm împreună școli.</p>
             </div>
-            <div>
-              <DonationForm />
-            </div>
+            <div className={styles.sponsorSectionBox}>
+    <h2 className={styles.sponsorTitle}>Completează contractul și susține educația din România.</h2>
+    <button className={styles.sponsorButton}>Completez contractul</button>
+    
+    <div className={styles.sponsorLinks}>
+        <a href="#model-de-contract">Model de contract</a>
+        <a href="#detalii-fiscale">Detalii suplimentare</a>
+    </div>
+
+    {/* <p className={styles.sponsorExplanation}>
+        Afla mai multe detalii despre modul în care pot fi realizate sponsorizările în anul 2024 și despre regimul de impozitare al acestora.
+    </p> */}
+</div>
+
+    
           </div>
         </section>
 
@@ -31,22 +42,24 @@ const DoneazaPage = () => {
           <div className={styles.container}>
             <div className={styles.aboutContentWrapper}>
               <div className={styles.carouselWrapper}>
+                <center>
                 <Carousel className={`${styles.carousel} ${styles.carouselCustom}`} indicators={false}>
                   <Carousel.Item>
                     <img
                       className={`${styles.carouselImage} d-block w-100`}
-                      src="/img/team-group/bkm_centru.jpg"
+                      src="/img/team/bkm_centru.jpg"
                       alt="bkm_centru"
                     />
                   </Carousel.Item>
                   <Carousel.Item>
                     <img
                       className={`${styles.carouselImage} d-block w-100`}
-                      src="/img/team-group/tgmures_abc.jpg"
+                      src="/img/team/tgmures_abc.jpg"
                       alt="tgmures_team"
                     />
                   </Carousel.Item>
                 </Carousel>
+                </center>
               </div>
               <div className={styles.aboutTextWrapper}>
                 <h2 className={styles.aboutTitle}>Manifestul nostru</h2>
@@ -87,71 +100,90 @@ const DoneazaPage = () => {
           </div>
         </section>
 
-        {/* Scoala ONedu Section */}
+        {/* unde merge investitia Section */}
         <section className={styles.aboutSection}>
           <div className={styles.container}>
             <div className={styles.aboutContentWrapper}>
               
               <div className={styles.aboutTextWrapper}>
-                <h2 className={styles.aboutTitle}>Cum vor arăta Școlile ONedu?</h2>
+                <h2 className={styles.aboutTitle}>Unde merge investiția ta?</h2>
                 <p className={styles.aboutText}>
                   Spitalul pe care l-am construit la Marie Curie este funcțional. În noul Spital, construit cu sprijinul a peste 350.000 de donatori și 8.000 de sponsori, s-au mutat secțiile de oncologie, neurochirurgie, chirurgie și ATI din vechea clădire. Blocul operator cu 5 săli de operație este, de asemenea, funcțional. De la mutare, numărul pacienților din secția de oncologie s-a dublat.
                 </p>
               </div>
               <div className={styles.carouselWrapper}>
-                <Carousel className={`${styles.carousel} ${styles.carouselCustom}`} indicators={false}>
-                  <Carousel.Item>
+                <center>
                     <img
-                      className={`${styles.carouselImage} d-block w-100`}
+                      className={`${styles.styleImage} d-block w-100`}
                       src="/img/team/bkm_centru.jpg"
                       alt="Imagine 1"
                     />
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className={`${styles.carouselImage} d-block w-100`}
-                      src="/img/team/tgmures_abc.jpg"
-                      alt="Imagine 2"
-                    />
-                  </Carousel.Item>
-                </Carousel>
+                </center>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Solutii digitale section */}
-        <section className={styles.solutionsSection}>
+        <section className={styles.formSubmission}>
+        <h2 className={styles.sectionTitle}>
+            Vreau să completez și să depun singur Formularul 230
+        </h2>
+        <div className={styles.formGrid}>
+            <div className={styles.formColumn}>
+            <p>
+                <strong>Formularul poate fi depus în persoană</strong> la sediul ANAF de care aparții cu domiciliul sau trimis prin curier sau prin poștă cu scrisoare recomandată.
+            </p>
+            <a href="#" className={styles.link}>
+                Vezi aici lista administrațiilor financiare
+            </a>
+            <p>
+                Descarcă formularul pre-completat cu datele Dăruiește Viață apăsând pe butonul de mai jos. <strong>Nu este nevoie să completezi și suma.</strong>
+            </p>
+            <button className={styles.downloadButton}>Descarcă formularul 230 pre-completat</button>
+            </div>
+            <div className={styles.formColumn}>
+            <p>
+                <strong>Formularul poate fi depus și online</strong> prin <a href="#" className={styles.link}>SPV (Spațiul Privat Virtual)</a> în cazul în care ai cont creat pe site-ul ANAF. Completează formularul inteligent cu datele personale și datele Asociației, bifează suma de 3,5%, validează-l și încarcă-l în SPV. Vei avea nevoie de aplicația <a href="#" className={styles.link}>Adobe Reader</a>.
+            </p>
+            <p>
+                Datele fiscale pe care trebuie să le completezi pentru noi sunt: <strong>Asociația DĂRUIEȘTE VIAȚĂ</strong>, cod identificare fiscală: <strong>30563375</strong>, cont bancar: <strong>RO08 INGB 0000 9999 0317 5286</strong>.
+            </p>
+            <button className={styles.downloadButton}>Descarcă formularul inteligent</button>
+            </div>
+        </div>
+        </section>
+
+        {/* Detalii fiscale section*/}
+        <section className={styles.aboutSection}>
           <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>
-              Planul nostru pentru educație digitală
-            </h2>
-            <div className={styles.cardsWrapper}>
-              <div className={styles.card2}>
-                <img src="/img/planul-nostru/aptitudini.webp" alt="aptitudini" />
-                <h3>Aptitudini și abilități</h3>
-                <p>Multe dintre abilitățile și cunoștințele tinerilor ce ies de pe băncile școlilor sunt desprinse din activități de voluntariat, youtube și social media. Școala, de cele mai multe ori, nu îi ajută în dezvoltarea aptitudinilor necesare în viața de adult.</p>
-                <a href="#">Află mai multe</a>
+            <div className={styles.aboutContentWrapper}>
+              <div className={styles.carouselWrapper}>
+                <center>
+                <img
+                      className={`${styles.styleImage} d-block w-100`}
+                      src="/img/team/bkm_centru.jpg"
+                      alt="Imagine 1"
+                    />
+                </center>
               </div>
-              <div className={styles.card2}>
-                <img src="/img/planul-nostru/management.png" alt="Management" />
-                <h3>Management școlar</h3>
-                <p>Administrarea școlilor în mod digital este primul pas într-o școală modernă și cu perspectivă de viitor. Miile de hârtii și comisii pe care o școală trebuie să le realizeze este un impas în păstrarea focusului pe dezvoltarea elevului.</p>
-                <a href="#">Află mai multe</a>
-              </div>
-              <div className={styles.card2}>
-                <img src="/img/planul-nostru/online.png" alt="educatie in online" />
-                <h3>Educație în online</h3>
-                <p>Elevii au nevoie ca informația să fie atractivă și corect livrată. Sursele multiple din online pot contura cunoștințe greșite, astfel că este imperios necesar ca educația din online să fie aliniată la datele științifice.</p>
-                <a href="#">Află mai multe</a>
-              </div>
+                <div className={styles.aboutTextWrapper}>
+                <h2 className={styles.aboutTitle}>Detalii fiscale</h2>
+                <ul className={styles.aboutText}>
+                    <li>Formularul 230 se completează de către persoanele fizice care realizează venituri din salarii. Procentul nu trebuie să depăşească plafonul de 3,5% din impozitul pe venit.</li>
+                    <li> Nu pot redirecționa 3,5% din impozitul pe venit: PFA-urile, titularii de întreprinderi individuale și familiale și alții care obțin venituri din activități independente (profesii liberale), cei care obțin venituri din drepturi de autor și pensii, în general cei care puteau face redirecționarea prin completarea formularului 230 sau a rubricii specifice din Declarația Unică (formularul 212). Modificarea este conform OUG 115/2023.
+                    </li>
+                 </ul>
+                </div>
+
             </div>
           </div>
         </section>
+
+
       </main>
 
     </Layout>
   );
 };
 
-export default DoneazaPage;
+export default SponsorizeazaPage;

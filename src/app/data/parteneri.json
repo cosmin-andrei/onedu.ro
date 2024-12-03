@@ -1,0 +1,19 @@
+{
+    "sponsoriInKind": [
+      { "id": 1, "src": "/img/parteneri/google.png", "alt": "Google for Nonprofits", "url": "https://www.google.com/nonprofits/" },
+      { "id": 2, "src": "/img/parteneri/microsoft-azure.png", "alt": "Microsoft Azure", "url": "https://azure.microsoft.com" },
+      { "id": 3, "src": "/img/parteneri/web365.png", "alt": "web365", "url": "https://web365.com" },
+      { "id": 4, "src": "/img/parteneri/github.png", "alt": "GitHub", "url": "https://github.com" },
+      { "id": 5, "src": "/img/parteneri/okta.png", "alt": "Okta", "url": "https://www.okta.com" },
+      { "id": 6, "src": "/img/parteneri/canva.png", "alt": "Canva", "url": "https://www.canva.com" },
+      { "id": 7, "src": "/img/parteneri/nooka.png", "alt": "Noka", "url": "https://www.nooka.com" },
+      { "id": 8, "src": "/img/parteneri/bdv.png", "alt": "bdv.bestauto", "url": "https://bdv.bestauto.com" }
+    ],
+    "sponsori": [
+      { "id": 1, "src": "/img/parteneri/google.png", "alt": "Google for Nonprofits", "url": "https://www.google.com/nonprofits/" }
+    ],
+    "teamCOR": [
+      { "id": 1, "src": "/img/parteneri/google.png", "alt": "Google for Nonprofits", "url": "https://www.google.com/nonprofits/" }
+    ]
+  }
+  

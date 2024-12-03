@@ -1,0 +1,357 @@
+.heroSection {
+    width: 100%;
+    background: url('/img/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between; /* Elemente în linie */
+    align-items: center; /* Elemente centrate pe verticală */
+    margin: 0;
+  }
+  
+  .heroContentWrapper {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap; /* Previne mutarea elementelor pe o altă linie */
+    align-items: center;
+    justify-content: space-between; /* Elemente distribuite spațios */
+    width: 100%;
+  }
+  
+  .heroTextWrapper {
+    max-width: 50%; /* Controlează spațiul ocupat */
+    color: #4a4f54;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .heroCTA {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 40%; /* Controlează dimensiunea secțiunii CTA */
+  }
+  
+  .heroCTA h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #004f29;
+    margin-bottom: 1rem;
+  }
+  
+  .heroCTA p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .ctaButton {
+    display: inline-block;
+    background-color: #1b0177;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .ctaButton:hover {
+    background-color: #120560;
+  }
+  
+
+  /* ABOUT SECTION */
+
+  .aboutSection {
+    width: 100vw;
+    padding: 3rem 0;
+    background-color: #fdfdff;
+  }
+  
+  .aboutContentWrapper {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .carouselWrapper {
+    flex: 1;
+    max-width: 500px; /* Lățimea maximă a caruselului */
+  }
+  
+  .carousel {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carouselCustom {
+    overflow: hidden;
+  }
+  
+  .carousel-item {
+    height: 300px; /* Înălțime fixă pentru carusel */
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+  }
+  
+  .carousel-item img {
+    object-fit: cover; /* Asigură imaginea se încadrează fără a fi distorsionată */
+    border-radius: 10px;
+    max-width: 500px;
+  }
+  
+  .aboutTextWrapper {
+    flex: 1;
+    max-width: 500px;
+    padding: 1rem;
+  }
+  
+  .aboutTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    
+  }
+  
+  .aboutText {
+    font-size: 1rem;
+    line-height: 1.5;
+  }  
+  
+  /* Elimină marginile și padding-urile pentru lista și itemii din listă */
+    .aboutTextWrapper ul {
+    margin: 0;  /* Elimină marginea de sus și de jos a listei */
+    padding: 0; /* Elimină padding-ul implicit al listei */
+  }
+  
+  .aboutTextWrapper li {
+    margin: 0;  /* Elimină marginea dintre itemii din listă */
+    padding: 0;
+    margin-bottom: 1rem; /* Elimină padding-ul dintre itemii din listă */
+  }
+  
+
+  
+
+
+  .styleImage{
+    border-radius: 10px;
+    max-width: 500px;
+  }
+
+  /* povestile elevilor */
+  .storiesSection {
+    padding: 3rem 0;
+    background-color: #D2E2FF;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.cardsWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 1rem 1.5rem;
+}
+
+.card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    color: #1b0177b8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #1b0177b8;
+}
+
+.formSubmission {
+    padding: 2rem;
+    background-color: #D2E2FF;
+    border-radius: 12px;
+    margin: 2rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+  
+  .formColumn {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formColumn p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .link {
+    color: #1b0177;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .downloadButton {
+    display: inline-block;
+    background-color: #1b0177;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px; /* Schimbare radius */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .downloadButton:hover {
+    background-color: #1b0177b8;
+  }
+  
+  .formSubmission strong {
+    color: #333;
+  }
+  
+  /* Stilurile pentru caseta din secțiunea Sponsorizează */
+.sponsorSectionBox {
+    background-color: white; /* Păstrează culoarea originală */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilul pentru textul principal al casetei */
+.sponsorTitle {
+    font-size: 1.8rem;  /* Dimensiune asemănătoare imaginii */
+    font-weight: 600;  /* Font-weight potrivit pentru titlu */
+    color: #000000;  /* Păstrează culoarea originală */
+    margin-bottom: 2rem;
+}
+
+/* Stilul pentru butonul principal */
+.sponsorButton {
+    display: inline-block;
+    padding: 10px 20px;  /* Ajustare pentru a semăna cu imaginea */
+    background-color: #1b0177; /* Păstrează culoarea originală a butonului */
+    color: #ffffff;  /* Păstrează culoarea originală */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;  /* Dimensiune potrivită pentru text */
+    font-weight: bold;  /* Asigurăm că textul este accentuat */
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 1rem; /* Spațiu între buton și restul secțiunii */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsorButton:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Stilurile pentru hyperlinkurile de sub buton */
+.sponsorLinks {
+    display: flex;
+    gap: 1rem; /* Spațiu între fiecare hyperlink */
+    margin-bottom: 1rem;  /* Spațiu între linkuri și textul explicativ */
+}
+
+.sponsorLinks a {
+    font-size: 1rem;
+    color: #000000; /* Păstrează culoarea originală */
+    text-decoration: underline;
+    font-weight: 600;  /* Font-weight pentru a le scoate în evidență */
+}
+
+.sponsorLinks a:hover {
+    color: #000000d9;  /* Efect de hover pentru un contrast mai bun */
+}
+
+/* Textul explicativ de sub hyperlinkuri */
+.sponsorExplanation {
+    font-size: 0.9rem;  /* Dimensiune asemănătoare cu imaginea */
+    color: #000000;  /* Ajustare pentru un contrast mai bun */
+}

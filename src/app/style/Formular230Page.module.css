@@ -1,0 +1,228 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Crește spațiul între câmpurile pe verticală și orizontală */
+}
+
+
+.inputGroup {
+  flex: 1;
+  min-width: 200px;
+}
+
+.inputGroupFull {
+  display: flex;
+  flex-direction: column; /* Aranjăm elementele vertical */
+  margin-bottom: 1.5rem; /* Spațiu între grupuri */
+  width: 100%; /* Ocupă întreaga lățime */
+}
+
+.inputGroupFull label {
+  font-size: 1rem; /* Dimensiunea fontului pentru etichetă */
+  font-weight: bold; /* Eticheta să fie mai vizibilă */
+  margin-bottom: 0.5rem; /* Spațiu sub etichetă */
+  color: #333; /* Culoare text */
+}
+
+.inputGroupFull input {
+  width: 100%; /* Input-ul ocupă lățimea grupului */
+  padding: 0.8rem; /* Spațiu interior */
+  font-size: 1rem; /* Dimensiune text */
+  border: 1px solid #ccc; /* Bordură neutră */
+  border-radius: 6px; /* Colțuri rotunjite */
+  outline: none; /* Eliminăm conturul standard */
+  transition: border-color 0.3s ease; /* Efect de tranziție pe bordură */
+}
+
+.inputGroupFull input:focus {
+  border-color: #1b0177; /* Bordură colorată la focus */
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.required {
+  color: red;
+  margin-left: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.inputGroup input,
+.inputGroup select {
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.selectionContainer {
+  margin-bottom: 2rem;
+}
+
+/* Spațiu între câmpuri */
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.legend {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.selectionButton {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.selectionButton.active {
+  background-color: #ffffff;
+  color: #1b0177;
+  border: 1.5px solid #1b0177;
+}
+
+.selectionButton:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.submitButton {
+  background: #1b0177;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.submitButton:hover {
+  background: #120560;
+}
+
+.signaturePad {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signatureCanvas {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.clearButton {
+  background-color: #ff4d4f;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clearButton:hover {
+  background-color: #e04344;
+}
+
+/* Card-ul pentru termeni și condiții și abonare */
+.termsCard {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.checkboxContainer a {
+  color: #1b0177;
+  text-decoration: underline;
+}
+
+.checkboxContainer a:hover {
+  color: #120560;
+  text-decoration: none;
+}

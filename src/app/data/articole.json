@@ -1,0 +1,25 @@
+{
+    "articles": [
+      {
+        "id": "jurizare-gala-directorii2024",
+        "title": "Ne-am întors la origini pentru a juriza la Gala Premiilor pentru Directorii Anului 2024",
+        "category": "Jurnal de ONG",
+        "date": "18 septembrie 2024",
+        "author": "Asociația ONedu",
+        "readTime": "2 minute",
+        "description": "În data de 5 septembrie ne-am întors în orașul din care mișcarea de digitalizare a educației – Asociația ONedu – a pornit în 2019 la inițiativa a doi elevi gălățeni, nemulțumiți de infrastructura...",
+        "image": "img/blog/stefan_jurizare_gala.jpg"
+      },
+      {
+        "id": "legea-educatiei-digitale",
+        "title": "Cum am reușit să punem în noua Lege a Educației digitalizarea și cum te ajută pe tine",
+        "category": "Jurnal de ONG",
+        "date": "4 octombrie 2023",
+        "author": "Asociația ONedu",
+        "readTime": "4 minute",
+        "description": "De peste patru ani, Comunitatea ONedu România, devenită cu acordul Asociația ONedu, susține și acționează direct transformările digitale în învățământ...",
+        "image": "img/blog/cd_sedinta2021.jpg"
+      }
+    ]
+  }
+  

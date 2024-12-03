@@ -1,0 +1,84 @@
+/* Hero Section - Ajustează înălțimea și poziționarea textului */
+.heroSection {
+    width: 100vw;
+    height: 30vh; 
+    background-color: #D2E2FF;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .heroContentWrapper {
+    display: flex;
+    gap: 2rem; /* Ajustează distanța dintre elemente */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start; /* Asigură că textul rămâne pe partea stângă */
+  }
+  
+  .heroTextWrapper {
+    max-width: 700px;
+    color: #000000;
+    margin-left: 2rem; /* Asigură că textul nu are spațiu pe partea stângă */
+  }
+  
+  .heroTitle {
+    font-size: 2rem; /* Mărim fontul pentru un impact mai mare */
+    font-weight: bold;
+  }
+
+  .raportSection {
+    padding: 3rem 2rem;
+  }
+  
+  .raportCardsWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+  
+  .raportCard {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 250px;
+  }
+  
+  .raportCard h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .cardLink {
+    color: #1b0177;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .cardLink:hover {
+    text-decoration: underline;
+  }
+  
+  .raportSection ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+  
+  .raportSection ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .raportSection li a:hover {
+    text-decoration: underline;
+  }
+  

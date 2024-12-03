@@ -1,0 +1,261 @@
+.heroSection {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    background: url('../../../public/img/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5rem;
+    margin-bottom: 7rem; /* Spațiu suplimentar pentru a preveni suprapunerea */
+}
+
+.heroContentWrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 60%;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    text-align: center;
+    opacity: 1;
+    margin-bottom: 2rem; /* Spațiu suplimentar pentru a evita suprapunerea */
+    cursor: pointer; /* Setează cursorul pentru a indica faptul că se poate da click */
+}
+
+.projectDetails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #666;
+    flex-wrap: wrap; /* Permite elementelor să fie împărțite pe rânduri diferite dacă este necesar */
+}
+
+.projectCategory,
+.projectStatus {
+    background-color: #1b0177; /* Albastru închis */
+    color: white;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 10px; /* Spațiu pentru a separa butoanele de data proiectului */
+}
+
+.projectDate {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 15px; /* Adaugă un spațiu între data proiectului și restul elementelor */
+    display: block;
+}
+
+.heroTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+
+.storiesSection {
+    padding: 3rem 0;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding: 5px;
+}
+
+.cardsWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 1rem 1.5rem;
+}
+
+.card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    color: #1b0177b8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #1b0177b8;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.paginationButton {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.paginationButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Filter section styling */
+.filterSection {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterWrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+.filterButton {
+    padding: 10px 20px;
+    border: 1px solid #dcdcdc;
+    background-color: white;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.activeFilter {
+    border-color: #ffa500; /* Galben-portocaliu pentru filtrul activ */
+    color: #333;
+    font-weight: bold;
+}
+
+/* Product cards styling */
+.productLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Aliniere la stânga */
+    width: 300px;  /* Dimensiune fixă pentru consistență */
+    background-color: #ffffff;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+/* Product title */
+.productTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Product details styling */
+.productDetailsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.productCategory {
+    background-color: #1b0177; /* Albastru închis */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.productPrice {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}

@@ -1,0 +1,78 @@
+/* Hero Section - Ajustează înălțimea și poziționarea textului */
+.heroSection {
+  width: 100vw;
+  height: 30vh; 
+  background-color: #D2E2FF;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+.heroContentWrapper {
+  display: flex;
+  gap: 2rem; /* Ajustează distanța dintre elemente */
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Asigură că textul rămâne pe partea stângă */
+}
+
+.heroTextWrapper {
+  max-width: 700px;
+  color: #000000;
+  margin-left: 2rem; /* Asigură că textul nu are spațiu pe partea stângă */
+}
+
+.heroTitle {
+  font-size: 2rem; /* Mărim fontul pentru un impact mai mare */
+  font-weight: bold;
+}
+
+/* Sponsori Section */
+.sponsoriSection {
+  padding: 3rem 2rem;
+  align-items: left;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-left: 0.5rem;
+}
+
+.sponsoriWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: left; /* Asigură că toate casetele sunt centrate orizontal */
+}
+
+.sponsorCard {
+  width: 200px; /* Asigură-te că toate casetele au aceeași lățime */
+  height: 200px; /* Asigură-te că toate casetele au aceeași înălțime */
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Asigură că logo-ul este centrat în casetă */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.sponsorCard img {
+  max-width: 100%;
+  max-height: 100%; /* Asigură-te că imaginea nu depășește caseta */
+  height: auto;
+  display: block;
+}
+
+.sponsorCardLink {
+  text-decoration: none;
+}
+
+.sponsorCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

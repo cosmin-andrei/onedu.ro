@@ -1,0 +1,277 @@
+/* Hero Section */
+.heroSection {
+    display: flex;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #f5f9ff;
+    margin-bottom: 3rem;
+    cursor: pointer; /* Setează cursorul pentru a arăta că secțiunea este clickabilă */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.heroSection:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.heroContentWrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heroImageWrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.heroTextWrapper {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.articleBadge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.badgeCategory {
+    background-color: #1b0177;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.readTime {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.heroTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.heroDescription {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.heroFooter {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.articleDate {
+    color: #999;
+}
+
+/* Articles Section */
+.articlesSection {
+    padding: 3rem 2rem;
+    background-color: #fff;
+}
+
+.articleCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articleCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.articleImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.articleCardContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.articleTitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.articleDescription {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.articleFooter {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Titlu Pagina Blog */
+.pageTitleSection {
+    padding: 2rem 2rem;
+    text-align: center;
+    background-color: #f5f9ff;
+}
+
+.pageTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Filter Section */
+.filterSection {
+    padding: 2rem 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.filterWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.filterButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filterButton:hover {
+    background-color: #1b0177;
+    color: #fff;
+}
+
+.activeFilter {
+    background-color: #1b0177;
+    color: #fff;
+}
+
+/* Articles Section */
+.articlesSection {
+    padding: 3rem 2rem;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.articleCard {
+    width: calc(33.333% - 2rem);
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articleCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.articleImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.articleCardContent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.articleBadge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.badgeCategory {
+    background-color: #1b0177;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.readTime {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.articleTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.articleDescription {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.articleFooter {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+

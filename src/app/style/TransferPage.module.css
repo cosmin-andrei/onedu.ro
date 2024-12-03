@@ -1,0 +1,80 @@
+/* HERO SECTION */
+
+.heroSection {
+  width: 100vw;
+  background-color: #d2e2ff; /* Culoare de fundal albastră deschisă */
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0; /* Asigură-te că nu există margini care să afecteze lățimea */
+}
+  
+  .heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* RESTUL PAGINII */
+  
+  .transferPage {
+    padding: 2rem;
+    background-color: #f8f9fa;
+  }
+  
+  .cardsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  
+  .paymentInfo {
+    flex: 1;
+    padding-left: 6rem;
+  }
+  
+  .paymentTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .paymentDetail {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #4a4f54;
+  }
+  
+  .paymentCode {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .paymentImage {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  

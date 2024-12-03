@@ -1,0 +1,113 @@
+/* Container principal pentru produs */
+.productContainer {
+    display: flex;
+    gap: 3rem;
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Imaginea Produsului */
+.productImageWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productImage {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Detalii Produs */
+.productDetails {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.productPrice {
+    font-size: 1.5rem;
+    color: #ff4500; /* Portocaliu pentru preț */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.addToCartButton {
+    background-color: #ff4500; /* Portocaliu pentru buton */
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.addToCartButton:hover {
+    background-color: #e63900; /* Mai închis la hover */
+}
+
+.productDescription {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.investmentNote {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+/* Opțiuni pentru Tricouri */
+.tricouOptions {
+    margin-top: 2rem;
+}
+
+.option {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.optionLabel {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.optionButton {
+    padding: 0.5rem 1.5rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.optionButton:hover {
+    background-color: #e6e6e6;
+}
+
+.activeOption {
+    background-color: #1b0177; /* Albastru închis pentru opțiunea selectată */
+    color: white;
+    border-color: #1b0177;
+}

@@ -1,0 +1,110 @@
+/* Fundal general pentru modal */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Containerul modalului */
+  .modal {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 850px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Butonul de închidere (X) */
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Layout general pentru secțiunile din modal */
+  .paymentDetails {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  /* Secțiunea din stânga */
+  .leftSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Pătratul albastru */
+  .investmentDetails {
+    background: #d2e2ff; /* Albastru deschis */
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    /* font-weight: bold; */
+    margin-bottom: 1rem;
+  }
+  
+  /* Textul discret */
+  .note {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  
+  /* Secțiunea din dreapta */
+  .formDetails {
+    flex: 2;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #000;
+  }
+  
+  .instructionText {
+    margin-bottom: 1rem;
+  }
+  
+  .bankDetails {
+    font-size: 1rem; /* Text mai mic */
+    line-height: 1.5;
+  }
+  
+  .label {
+    margin: 0.5rem 0;
+  }
+  
+  /* Butonul „Am înțeles” */
+  .confirmButton {
+    background: #1b0177; /* Albastru */
+    color: #fff;
+    border: none;
+    padding: 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    text-align: center;
+    width: 100%; /* Lățime completă */
+  }
+  
+  .confirmButton:hover {
+    background: #120560;
+  }
+  
