@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
-import Layout from '../src/app/layout'; // Layout global
-import judeteData from '../src/app/data/judete.json'; // Importăm JSON-ul cu județe și orașe
-import styles from '../src/app/style/Formular230Page.module.css'; // Stiluri pentru pagină
+import Layout from '../src/app/layout';
+import judeteData from '../src/app/data/judete.json'; 
+import styles from '../src/app/style/Formular230Page.module.css';
 import Link from 'next/link';
 
-// Interfața pentru JSON
 interface Localitate {
   nume: string;
   simplu?: string;
@@ -18,27 +17,26 @@ interface Judet {
 }
 
 const Formular230Page: React.FC = () => {
-  const [selectedPeriod, setSelectedPeriod] = useState('2'); // Perioada preselectată
-  const [selectedCounty, setSelectedCounty] = useState(''); // Județ selectat
-  const [cities, setCities] = useState<string[]>([]); // Orașe disponibile
-  const [selectedCity, setSelectedCity] = useState(''); // Oraș selectat
+  const [selectedPeriod, setSelectedPeriod] = useState('2'); 
+  const [selectedCounty, setSelectedCounty] = useState(''); 
+  const [cities, setCities] = useState<string[]>([]); 
+  const [selectedCity, setSelectedCity] = useState(''); 
   const [selectedSignature, setSelectedSignature] = useState('suggested');
-  const [isDrawing, setIsDrawing] = useState(false); // Controlăm afișarea secțiunii de desenat
-  const sigCanvas = useRef<SignatureCanvas>(null); // Referință pentru canvas-ul de desen
-  const [isAgreed, setIsAgreed] = useState(true); // Pentru checkbox-ul preselectat
-  const [isSubscribed, setIsSubscribed] = useState(false); // Pentru opțiunea de abonare
+  const [isDrawing, setIsDrawing] = useState(false); 
+  const sigCanvas = useRef<SignatureCanvas>(null);
+  const [isAgreed, setIsAgreed] = useState(true); 
+  const [isSubscribed, setIsSubscribed] = useState(false); 
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleFormSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
 
-    if (selectedSignature === 'manual' && sigCanvas.current) {
-      const signatureImage = sigCanvas.current.getTrimmedCanvas().toDataURL('image/png');
-      console.log('Semnătura desenată:', signatureImage);
-      // Poți trimite semnătura către backend
-    }
+  //   if (selectedSignature === 'manual' && sigCanvas.current) {
+  //     const signatureImage = sigCanvas.current.getTrimmedCanvas().toDataURL('image/png');
+  //     console.log('Semnătura desenată:', signatureImage);
+  //   }
 
-    console.log('Formular trimis!', { isSubscribed });
-  };
+  //   console.log('Formular trimis!', { isSubscribed });
+  // };
 
   const clearSignature = () => {
     if (sigCanvas.current) {

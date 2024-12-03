@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ChangeEvent, FocusEvent } from 'react';
+import React, { useState, ChangeEvent} from 'react';
 import { FaCreditCard, FaUniversity } from 'react-icons/fa';
 import PaymentModal from './PaymentModal'; // Importă PaymentModal
 import TransferModal from './TransferModal'; // Importă TransferModal
@@ -124,7 +124,6 @@ const DonationForm = () => {
         isOpen={isTransferModalOpen}
         onClose={() => setIsTransferModalOpen(false)}
         amount={amount}
-        frequency={frequency}
       />
     </>
   );

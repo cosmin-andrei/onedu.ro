@@ -12,10 +12,9 @@ const TransferModal: React.FC<TransferModalProps> = ({ isOpen, onClose, amount }
     return null;
   }
 
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Închide modalul dacă se face click pe fundal
+  const handleOverlayClick = () => {
     onClose();
-  };
+  };  
 
   const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
     // Previne propagarea clickului spre fundal

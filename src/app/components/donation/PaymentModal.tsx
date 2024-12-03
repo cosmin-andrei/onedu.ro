@@ -22,12 +22,12 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, amount, fr
     return null;
   }
 
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    onClose(); // Închide modalul dacă se face click pe fundal
+  const handleOverlayClick = () => {
+    onClose();
   };
-
+  
   const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation(); // Previne propagarea clickului spre fundal
+    e.stopPropagation();
   };
 
   return (
