@@ -1,0 +1,581 @@
+/* Hero Section - Ajustează înălțimea și poziționarea textului */
+.heroSection {
+    width: 100vw;
+    height: 50vh; 
+    background: url('../../../public/img/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .heroContentWrapper {
+    display: flex;
+    gap: 2rem; /* Ajustează distanța dintre elemente */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start; /* Asigură că textul rămâne pe partea stângă */
+  }
+  
+  .heroTextWrapper {
+    max-width: 500px;
+    color: #000000;
+    margin-left: 2rem; /* Asigură că textul nu are spațiu pe partea stângă */
+  }
+  
+  .heroTitle {
+    font-size: 3rem; /* Mărim fontul pentru un impact mai mare */
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+
+  /* ABOUT SECTION */
+
+  .aboutSection {
+    width: 100vw;
+    padding: 3rem 0;
+    background-color: #fdfdff;
+  }
+  
+  .aboutContentWrapper {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .carouselWrapper {
+    flex: 1;
+    max-width: 500px; /* Lățimea maximă a caruselului */
+  }
+  
+  .carousel {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carouselCustom {
+    overflow: hidden;
+  }
+  
+  .carousel-item {
+    height: 300px; /* Înălțime fixă pentru carusel */
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asigură imaginea se încadrează fără a fi distorsionată */
+    border-radius: 10px;
+  }
+  
+  .aboutTextWrapper {
+    flex: 1;
+    max-width: 500px;
+    padding: 1rem;
+  }
+  
+  .aboutTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .aboutText {
+    font-size: 1rem;
+    line-height: 1.5;
+  }  
+
+  .styleImage{
+    border-radius: 10px;
+    max-width: 500px;
+  }
+
+
+  .projectDetails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #666;
+    flex-wrap: wrap; /* Permite elementelor să fie împărțite pe rânduri diferite dacă este necesar */
+}
+
+.projectCategory,
+.projectStatus {
+    background-color: #1b0177; /* Albastru închis */
+    color: white;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 10px; /* Spațiu pentru a separa butoanele de data proiectului */
+}
+
+.projectDate {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 15px; /* Adaugă un spațiu între data proiectului și restul elementelor */
+    display: block;
+}
+
+.heroTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+
+.storiesSection {
+    padding: 3rem 0;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding: 5px;
+}
+
+.cardsWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 1rem 1.5rem;
+}
+
+.card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    color: #1b0177b8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #1b0177b8;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.paginationButton {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.paginationButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.filterSection {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterWrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+.filterButton {
+    padding: 10px 20px;
+    border: 1px solid #dcdcdc;
+    background-color: white;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.activeFilter {
+    border-color: #ffa500; /* Galben-portocaliu pentru filtrul activ */
+    color: #333;
+    font-weight: bold;
+}
+  
+
+
+  .card2 {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card2 img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  max-height: 200px; 
+  object-fit: contain; 
+  border-bottom: 1px solid #ddd;
+}
+
+
+.card2 h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.card2 p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 1rem 1.5rem;
+}
+
+.card2 a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    color: #1b0177b8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card2 a:hover {
+    color: #1b0177b8;
+}
+.storiesSection {
+  padding: 3rem 0;
+  background-color: #D2E2FF;
+}
+  /* povestile elevilor */
+  .storiesSection2 {
+    padding: 3rem 0;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.cardsWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 1rem 1.5rem;
+}
+
+.card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    color: #1b0177b8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #1b0177b8;
+}
+
+  /* Section container */
+.visionSection { 
+    padding: 4rem 10rem;
+  }
+  
+  .visionTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  /* Text styles */
+  .visionText {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  
+  /* Button styles */
+  .digitalizationButton {
+    background-color: #1b0177;  /* Albastru închis */
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .digitalizationButton:hover {
+    background-color: #1b0177b8;  /* Nuantă mai închisă la hover */
+  }
+  
+  .solutionsSection {
+    padding: 3rem 0;
+    background-color: #D2E2FF;
+  }
+
+  .sponsorCard {
+    width: 200px; /* Asigură-te că toate casetele au aceeași lățime */
+    height: 200px; /* Asigură-te că toate casetele au aceeași înălțime */
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Asigură că logo-ul este centrat în casetă */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .sponsorCard img {
+    max-width: 100%;
+    max-height: 100%; /* Asigură-te că imaginea nu depășește caseta */
+    height: auto;
+    display: block;
+  }
+  
+  .sponsorCardLink {
+    text-decoration: none;
+  }
+  
+  .sponsorCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popupContent {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popupCloseButton {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .popupContainer {
+    display: flex;
+    align-items: center; /* Aliniere pe verticală */
+    justify-content: space-between; /* Spațiere între cele două coloane */
+    gap: 2rem;
+  }
+  
+  .popupImageWrapper {
+    flex: 0 0 150px; /* Dimensiune fixă pentru coloană */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popupImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .popupTextWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .popupHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .statusDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .statusText {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .popupTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1b0177;
+  }
+  
+  .popupDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  .popupFooter {
+    margin-top: 1rem;
+  }
+  
+  .popupButton {
+    background-color: #1b0177;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .popupButton:hover {
+    background-color: #3203a6;
+  }
+  

@@ -5,23 +5,12 @@ import styles from '../src/app/style/ProiectePage.module.css';
 import Image from 'next/image';
 
 const ProjectsPage = () => {
-    // Extragem lista de proiecte din fișierul JSON
     const projects = data.projects;
-
-    // Primul proiect, care va fi folosit în secțiunea Hero
     const heroProject = projects[0];
-
-    // Restul proiectelor, care vor fi afișate în secțiunea de casete
     const remainingProjects = projects.slice(1);
-
-    // State pentru filtrarea proiectelor
     const [filter, setFilter] = useState('Toate');
-
-    // State pentru paginare
     const [currentPage, setCurrentPage] = useState(1);
     const projectsPerPage = 16;
-
-    // Funcție pentru filtrarea proiectelor
     const filteredProjects = remainingProjects.filter((project) => {
         if (filter === 'Toate') {
             return true;
@@ -29,20 +18,16 @@ const ProjectsPage = () => {
         return project.status === filter;
     });
 
-    // Calculează indexul de început și sfârșit pentru paginare
     const indexOfLastProject = currentPage * projectsPerPage;
     const indexOfFirstProject = indexOfLastProject - projectsPerPage;
     const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject);
 
-    // Calculează numărul total de pagini
     const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
-    // Funcția de click pentru a redirecționa către pagina unui proiect specific
     const handleProjectClick = (dest: string) => {
         window.location.href = '/proiecte/' + dest;
     };
 
-    // Funcții pentru butoanele de navigare (Prev și Next)
     const handlePrevPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);

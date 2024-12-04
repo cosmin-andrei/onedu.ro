@@ -42,7 +42,10 @@ const Header = () => {
             )}
           </li>
           <li className={styles.navItem}>
-            <Link href="/planul-nostru" className={styles.navLink}>Planul nostru</Link>
+            <Link href="/plan" className={styles.navLink}>Planul nostru</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/scoala" className={styles.navLink}>Școala ONedu</Link>
           </li>
           <li className={styles.navItem}>
             <Link href="/sponsorizeaza" className={styles.navLink}>Sponsorizează 20%</Link>
