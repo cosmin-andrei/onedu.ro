@@ -4,8 +4,8 @@ import styles from '../src/app/style/PlanPage.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import data from '../src/app/data/solutii.json'; 
 import Image from 'next/image';
-import Link from 'next/link';
 import { Carousel } from 'react-bootstrap';
+import Link from 'next/link';
 
 
 const PlanPage = () => {
@@ -46,7 +46,7 @@ const PlanPage = () => {
     };
   
     // Deschide popup-ul
-    const openPopup = (solution: any) => {
+    const openPopup = (solution: { title: string; category: string; image: string; description: string; link: string; id: string; status: string }) => {
       setSelectedSolution(solution);
       setShowPopup(true);
     };
@@ -273,13 +273,13 @@ const PlanPage = () => {
                 <p className={styles.popupDescription}>{selectedSolution.description}</p>
                 <div className={styles.popupFooter}>
                     {selectedSolution.link ? (
-                    <a href={selectedSolution.link} target="_blank" rel="noopener noreferrer">
+                    <Link href={selectedSolution.link} target="_blank" rel="noopener noreferrer">
                         <button className={styles.popupButton}>Vezi soluția &rarr;</button>
-                    </a>
+                    </Link>
                     ) : (
-                    <a href="/contact">
+                    <Link href="/contact">
                         <button className={styles.popupButton}>Hai să o facem realitate</button>
-                    </a>
+                    </Link>
                     )}
                 </div>
                 </div>
