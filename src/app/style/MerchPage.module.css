@@ -259,3 +259,101 @@
     color: #333;
     font-weight: bold;
 }
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popupContent {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.popupWrapper {
+    display: flex;
+    gap: 2rem;
+}
+
+.popupImageWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupImage {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.popupDetails {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+.popupTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.popupPrice {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.popupDescription {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.popupBuyButton {
+    background: #ffa500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.popupBuyButton:hover {
+    background: #ff8c00;
+}
+

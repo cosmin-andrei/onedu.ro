@@ -1,12 +1,12 @@
 {
     "products": [
         {
-            "id": "cercei-dv",
-            "title": "Cercei DV",
-            "category": "Bijuterii",
-            "price": 30,
-            "image": "/img/produse/cercei-dv.jpg",
-            "description": "Cerceii DV sunt un cadou cu sens. Pentru tine sau pentru cineva drag ție..."
+            "id": "bag-tedx-with-pen",
+            "title": "Sacoșă textilă TEDxAvram Iancu Street",
+            "category": "Accesorii",
+            "price": 100,
+            "image": "/img/produse/bag-tedx-with-pen.png",
+            "description": "Disponibilă în ediție limitată, sacoșa textilă TEDxAvram Iancu Street este un accesoriu util și elegant, perfect pentru a-ți transporta obiectele personale într-un mod eco-friendly. Ieși în evidența prin marca „Life Changing Decisions”"
         },
         {
             "id": "tricou-educatie",

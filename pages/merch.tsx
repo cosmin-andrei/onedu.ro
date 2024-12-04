@@ -8,21 +8,26 @@ const MerchPage = () => {
     // Extragem lista de produse din fișierul JSON
     const products = data.products;
 
-    // Primul produs, care va fi folosit în secțiunea Hero
-    const heroProduct = products[0];
-
-    // Restul produselor, care vor fi afișate în secțiunea de casete
-    const remainingProducts = products.slice(1);
-
-    // State pentru filtrarea produselor
+    // State pentru filtrare și paginare
     const [filter, setFilter] = useState('Toate');
-
-    // State pentru paginare
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 16;
 
-    // Funcție pentru filtrarea produselor
-    const filteredProducts = remainingProducts.filter((product) => {
+    // State pentru popup
+    interface Product {
+        id: string;
+        title: string;
+        category: string;
+        price: number;
+        image: string;
+        description: string;
+    }
+    
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+    const [showPopup, setShowPopup] = useState(false);
+
+    // Filtrarea produselor
+    const filteredProducts = products.filter((product) => {
         if (filter === 'Toate') {
             return true;
         }
@@ -37,12 +42,7 @@ const MerchPage = () => {
     // Calculează numărul total de pagini
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
-    // Funcția de click pentru a redirecționa către pagina unui produs specific
-    const handleProductClick = (dest: string) => {
-        window.location.href = '/produse/' + dest;
-    };
-
-    // Funcții pentru butoanele de navigare (Prev și Next)
+    // Funcții pentru paginare
     const handlePrevPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
@@ -55,28 +55,21 @@ const MerchPage = () => {
         }
     };
 
+    // Deschide popup-ul pentru un produs selectat
+    const handleProductClick = (product: Product) => {
+        setSelectedProduct(product);
+        setShowPopup(true);
+    };
+
     return (
         <Layout>
-            {/* Secțiunea Hero - Primul Produs */}
-            {heroProduct && (
-                <section className={styles.heroSection}>
-                    <div
-                        className={styles.heroContentWrapper}
-                        onClick={() => handleProductClick(heroProduct.id)}
-                    >
-                        <h1 className={styles.heroTitle}>{heroProduct.title}</h1>
-                        <div className={styles.productDetails}>
-                            <span className={styles.productCategory}>{heroProduct.category}</span>
-                            <span className={styles.productPrice}>{heroProduct.price} RON</span>
-                        </div>
-                    </div>
-                </section>
-            )}
+            {/* Secțiunea Hero */}
+            <section className={styles.heroSection}></section>
 
             {/* Secțiunea de Filtrare */}
             <section className={styles.filterSection}>
                 <div className={styles.filterWrapper}>
-                    {['Toate', 'Tricouri', 'Afișe', 'Accesorii'].map((category) => (
+                    {['Toate', 'Îmbrăcăminte', 'Birotică', 'Accesorii'].map((category) => (
                         <button
                             key={category}
                             className={`${styles.filterButton} ${filter === category ? styles.activeFilter : ''}`}
@@ -91,7 +84,7 @@ const MerchPage = () => {
                 </div>
             </section>
 
-            {/* Secțiunea de Produse cu casete */}
+            {/* Secțiunea de Produse */}
             <section className={styles.storiesSection}>
                 <div className={styles.container}>
                     <div className={styles.cardsWrapper}>
@@ -99,7 +92,7 @@ const MerchPage = () => {
                             <div
                                 key={product.id}
                                 className={styles.card}
-                                onClick={() => handleProductClick(product.id)}
+                                onClick={() => handleProductClick(product)}
                             >
                                 <Image width={500} height={300} src={product.image} alt={product.title} />
                                 <h3 className={styles.sectionTitle}>{product.title}</h3>
@@ -121,7 +114,7 @@ const MerchPage = () => {
                     </div>
                 </div>
 
-                {/* Secțiunea de Navigare pentru paginare */}
+                {/* Secțiunea de Navigare */}
                 {filteredProducts.length > productsPerPage && (
                     <div className={styles.paginationWrapper}>
                         <button
@@ -144,6 +137,50 @@ const MerchPage = () => {
                     </div>
                 )}
             </section>
+
+            {/* Popup pentru produs */}
+            {showPopup && selectedProduct && (
+    <div className={styles.popup}>
+        <div className={styles.popupContent}>
+            <button
+                className={styles.closeButton}
+                onClick={() => setShowPopup(false)}
+            >
+                &times;
+            </button>
+            <div className={styles.popupWrapper}>
+                {/* Secțiunea stângă cu imaginea */}
+                <div className={styles.popupImageWrapper}>
+                    <Image
+                        src={selectedProduct.image}
+                        alt={selectedProduct.title}
+                        width={300}
+                        height={300}
+                        className={styles.popupImage}
+                    />
+                </div>
+                {/* Secțiunea dreaptă cu detalii */}
+                <div className={styles.popupDetails}>
+                    <h2 className={styles.popupTitle}>{selectedProduct.title}</h2>
+                    <p className={styles.popupPrice}>{selectedProduct.price} RON</p>
+                    <button
+                        className={styles.popupBuyButton}
+                        onClick={() => {
+                            alert(`Ai cumpărat ${selectedProduct.title}`);
+                            setShowPopup(false);
+                        }}
+                    >
+                        Adaugă în coș
+                    </button>
+                    <p className={styles.popupDescription}>
+                        {selectedProduct.description}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+)}
+
         </Layout>
     );
 };
