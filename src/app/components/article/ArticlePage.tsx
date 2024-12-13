@@ -3,14 +3,14 @@ import styles from "../style/ArticlePage.module.css";
 import Image from "next/image";
 import data from "../../data/articole.json";
 
-interface ArticlePageProps {
-    articleId: string;
-}
-
 interface ArticleContent {
     type: string;
     value: string;
     alt?: string;
+}
+
+interface ArticlePageProps {
+    articleId: string;
 }
 
 const ArticlePage: React.FC<ArticlePageProps> = ({ articleId }) => {
@@ -24,13 +24,15 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ articleId }) => {
         <div className={styles.articlePage}>
             {/* Hero Section */}
             <section className={styles.heroSection}>
-                <Image
-                    src={article.image}
-                    alt={article.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className={styles.heroImage}
-                />
+                <div className={styles.heroImageWrapper}>
+                    <Image
+                        src={article.image}
+                        alt={article.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className={styles.heroImage}
+                    />
+                </div>
                 <div className={styles.heroOverlay}>
                     <h1 className={styles.heroTitle}>{article.title}</h1>
                 </div>
@@ -39,12 +41,13 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ articleId }) => {
             {/* Detalii despre articol */}
             <div className={styles.detailsWrapper}>
                 <div className={styles.detailsLeft}>
-                    <span className={styles.badge}>Jurnal de ONG</span>
+                    <span className={styles.badge}>{article.category}</span>
                     <span className={styles.views}>{article.views} views</span>
                     <span className={styles.readTime}>{article.readTime} min read</span>
                 </div>
                 <div className={styles.detailsRight}>
-                {article.content.map((section: ArticleContent, index: number) => {
+                    <span className={styles.author}>Scris de: {article.author}</span>
+                    <span className={styles.date}>Publicat pe: {article.date}</span>
                 </div>
             </div>
 

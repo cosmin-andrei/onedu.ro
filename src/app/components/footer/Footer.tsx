@@ -1,9 +1,55 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
-const Footer = () => {
+const Footer = () => {  
+  
+  const [formData, setFormData] = useState({
+    firstName: "",
+    email: "",
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Previne reîncărcarea paginii
+    try {
+      const response = await fetch("http://localhost:3000/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+        credentials: "include", // Include cookies, dacă sunt necesare
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe to newsletter");
+      }
+
+      const data = await response.json();
+      console.log("Successfully subscribed:", data);
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred");
+      }
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
@@ -36,13 +82,31 @@ const Footer = () => {
         </div>
         <div className={styles.columnLarge}>
           <h3 className={styles.columnHeading}>Abonează-te</h3>
-          <form className={styles.newsletterFormInline}>
+          <form className={styles.newsletterFormInline} onSubmit={handleSubmit}>
             <div className={styles.inlineFields}>
-              <input type="text" placeholder="Prenume" className={styles.inputFieldInlineShortLargePadding} />
-              <input type="text" placeholder="Nume" style={{ marginLeft: '0.5rem' }} className={styles.inputFieldInlineShortLargePadding} />
-            
-            <input type="email" placeholder="Email" style={{ marginLeft: '0.5rem' }} className={styles.inputFieldInlineShortLargePadding} /></div>
-            <button type="submit" className={styles.subscribeButtonInline}>Rămâi la curent</button>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="Prenume"
+                value={formData.firstName}
+                onChange={handleChange}
+                className={styles.inputFieldInlineShortLargePadding}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                style={{ marginLeft: "0.5rem" }}
+                className={styles.inputFieldInlineShortLargePadding}
+              />
+            </div>
+            <button type="submit" className={styles.subscribeButtonInline}>
+              Rămâi la curent
+            </button>
+            {isSubmitted && <p>Mulțumim pentru înscriere!</p>}
+            {error && <p style={{ color: "red" }}>Eroare: {error}</p>}
           </form>
           <div className={styles.socialIconsTop}>
             <Link href="https://facebook.com/ONeduRomania" className={styles.socialIconTop}><FaFacebook /></Link>

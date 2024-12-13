@@ -1,0 +1,141 @@
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  /* Hero Section - Ajustează înălțimea și poziționarea textului */
+.heroSection {
+    width: 100vw;
+    height: 30vh; 
+    background-color: #D2E2FF;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .heroContentWrapper {
+    display: flex;
+    gap: 2rem; /* Ajustează distanța dintre elemente */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start; /* Asigură că textul rămâne pe partea stângă */
+  }
+  
+  .heroTextWrapper {
+    max-width: 700px;
+    color: #000000;
+    margin-left: 2rem; /* Asigură că textul nu are spațiu pe partea stângă */
+  }
+  
+  .heroTitle {
+    font-size: 2rem; /* Mărim fontul pentru un impact mai mare */
+    font-weight: bold;
+  }  
+  
+  .exitButton {
+    background-color: transparent;
+    color: #ff5722;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .infoBox {
+    background-color: #fff5f0;
+    border: 1px solid #ffd2cc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .searchBox {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .searchButton {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footerText {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .footerText a {
+    color: #ff5722;
+    text-decoration: none;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .modalActions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .cancelButton,
+  .confirmButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancelButton {
+    background-color: #ddd;
+    color: #333;
+  }
+  
+  .confirmButton {
+    background-color: #ff5722;
+    color: white;
+  }
+  

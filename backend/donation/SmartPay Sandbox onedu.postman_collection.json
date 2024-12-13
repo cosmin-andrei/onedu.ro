@@ -1,0 +1,1155 @@
+{
+	"info": {
+		"_postman_id": "d3756cfc-de2e-4561-aec8-a00c3f4659f7",
+		"name": "SmartPay Sandbox onedu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30016141"
+	},
+	"item": [
+		{
+			"name": "Intermediary API's - Ecommerce",
+			"item": [
+				{
+					"name": "Authenticate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.result.access_token);\r",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.result.refresh_token);\r",
+									"postman.setEnvironmentVariable(\"paymentId\", jsonData.result.paymentId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "client_id",
+									"value": "{{client_id-ecommerce}}",
+									"type": "text"
+								},
+								{
+									"key": "flexibleURL",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isLink2Pay",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isHeadless",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/authenticate/rest/api/token",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"authenticate",
+								"rest",
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Banks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_BASE_URI}}/core/rest/api/banks",
+							"host": [
+								"{{API_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"banks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.result.access_token);\r",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.result.refresh_token);\r",
+									"postman.setEnvironmentVariable(\"paymentId\", jsonData.result.paymentId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Base64-cert",
+									"value": "{{Base64-cert-ecommerce}}",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{refresh_token}}",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id-ecommerce}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/authenticate/rest/api/refreshToken",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"authenticate",
+								"rest",
+								"api",
+								"refreshToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - LIB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"RO89BREL0002003486690100\",\r\n    \"debtorBank\": \"LIB\",\r\n    \"creditorIban\": \"RO57BTRL1234567890123456\",\r\n    \"amount\": 21.00,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"test@test.eu\",\r\n    \"psuIntermediarId\": \"123\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"ibanOptimization\": false \r\n}\r\n    //used for flexible_payments\r\n    // \"validUntil\" : \"20-11-2022\",\r\n    // \"remainingInitiations\" : 7",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - RZB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"Test Alin\",\r\n    \"debtorIban\": \"RO03RZBR0000069999999999\",\r\n    \"debtorBank\": \"RZB\",\r\n    \"creditorIban\": \"RO57BTRL1234567890123456\",\r\n    \"amount\": 21.00,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"lucian.coman5@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"123\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"isCorporate\":false,\r\n    \"psuId\": \"9999999998\"\r\n}\r\n    //used for flexible_payments\r\n    // \"validUntil\" : \"20-11-2022\",\r\n    // \"remainingInitiations\" : 7",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - BCR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"Dani\",\r\n    \"debtorIban\": \"RO77RNCB0002000000010001\",\r\n    \"debtorBank\": \"BCR\",\r\n    \"creditorIban\": \"RO25PIRB1234567890123456\",\r\n    \"amount\": 21.00,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"test@test.eu\",\r\n    \"psuIntermediarId\": \"123\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"ibanOptimization\":false,\r\n    \"subpartnerCIF\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - BT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"RO28BTRLRONCRT0228888501\",\r\n    \"debtorBank\": \"BT\",\r\n    \"creditorIban\": \"RO34BTRL0000160100719900\",\r\n    \"amount\": 50.00,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"test@test.eu\",\r\n    \"psuIntermediarId\": 123,\r\n    \"redirectURL\": \"https://localhost:7777/dashboard\",\r\n    \"TCAccepted\": \"true\"\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n//\"subpartnerCIF\": \"RO123456\",\r\n//\"psuId\": \"9999999998\"\r\n//used for flexible_payments\r\n// \"validUntil\" : \"20-11-2022\",\r\n// \"remainingInitiations\" : 7",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - BT Flexible example flow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtorIban\": \"RO57BTRL1234567890123456\",\r\n    \"debtorBank\": \"BT\",\r\n    \"creditorIban\": \"RO47TREZ70020020150XXXXX\",\r\n    \"creditorName\": \"Creditor Name Alin\",\r\n    \"amount\": 20.2,\r\n    \"details\": \"detalii alin\",\r\n    \"psuEmail\": \"alin.puscasu2@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"123\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"validUntil\": \"13-02-2024\",\r\n    \"remainingInitiations\": -1,\r\n    \"ibanOptimization\": true,\r\n    \"subpartnerCIF\": \"ro123123\",\r\n        \"cuiCnp\": \"4444\",\r\n    \"psuId\": \"31111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - CEC Bank",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"RO22CECEB31844RON2549947\",\r\n    \"debtorBank\": \"CEC\",\r\n    \"creditorIban\": \"RO09PORL7789778256833565\",\r\n    \"amount\": 22,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"lucian.coman@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"intermediaryId\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"subpartnerCIF\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - BRD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"RO83BRDE1234567890123456\",\r\n    \"debtorBank\": \"BRD\",\r\n    \"creditorIban\": \"RO25PIRB1234567890123456\",\r\n    \"amount\": 28,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"lucian.co5an@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": 123,\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n     \"isCorporate\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - ING",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"RO84INGB0002000000001111\",\r\n    \"debtorBank\": \"ING\",\r\n    \"creditorIban\": \"RO09PORL7789778256833565\",\r\n    \"amount\": 1,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"daniela.popa@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": 123,\r\n    \"redirectURL\": \"https://test.myfinest.ro/#/\",\r\n    \"subpartnerCIF\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - FB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"RO25PIRB1234567890123456\",\r\n    \"debtorBank\": \"FB\",\r\n    \"creditorIban\": \"RO64RNCB0857169988050008\",\r\n    \"amount\": 2.00,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"lucian.coman4@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"intermediaryId\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"subpartnerCIF\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - ALPHA",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"\",\r\n    \"debtorBank\": \"ALPH\",\r\n    \"creditorIban\": \"GR2001401250125002786001006\",\r\n    \"amount\": 20,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"lucian.coman4@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"intermediaryId\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"subpartnerCIF\": \"RO9876\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - UNC",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"RO32BACX0000000515979310\",\r\n    \"debtorBank\": \"UNC\",\r\n    \"creditorIban\": \"RO70BACX0000003528017000\",\r\n    \"amount\": 2,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"lucian.coman@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"emag\",\r\n     \"redirectURL\": \"https://google.ro\",\r\n    \"subpartnerCIF\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - OTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtorIban\": \"RO66OTPV0000000002431472\",\r\n    \"debtorBank\": \"OTP\",\r\n    \"creditorName\": \"test\",\r\n    \"creditorIban\": \"RO57BTRL1234567890123456\",\r\n    \"amount\": 2,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"YOUR.EMAIL@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"emag\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"subpartnerCIF\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - GRT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtorIban\": \"RO18UGBI0000492016584RON\",\r\n    \"debtorBank\": \"GRT\",\r\n    \"creditorName\": \"test\",\r\n    \"creditorIban\": \"RO57BTRL1234567890123456\",\r\n    \"amount\": 2,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"YOUR.EMAIL@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"emag\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"subpartnerCIF\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - REV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creditorName\": \"test\",\r\n    \"debtorIban\": \"RO14BREL0005504062990100\",\r\n    \"debtorBank\": \"REV\",\r\n    \"creditorIban\": \"GR2001401250125002786001006\",\r\n    \"amount\": 1.00,\r\n    \"details\": \"test\",\r\n    \"psuEmail\": \"test@test.eu\",\r\n    \"psuIntermediarId\": \"12312\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"TCAccepted\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/initPayment/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"initPayment",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/status/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"status",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bulk Intermediary API's",
+			"item": [
+				{
+					"name": "Authenticate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.result.access_token);\r",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.result.refresh_token);\r",
+									"postman.setEnvironmentVariable(\"paymentId\", jsonData.result.paymentId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "client_id",
+									"value": "{{client_id-ecommerce}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/authenticate/rest/api/token",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"authenticate",
+								"rest",
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.result.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh_token",
+									"value": "{{refresh_token}}",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id-ecommerce}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/authenticate/rest/api/refreshToken",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"authenticate",
+								"rest",
+								"api",
+								"refreshToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - ING",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "PSU-IP-Address",
+								"value": "192.12.123.32",
+								"description": "//some old value 198.121.321.1.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtorIban\": \"RO84INGB0002000000001111\",\r\n    \"debtorBank\": \"ING\",\r\n    \"payments\": [\r\n        {\r\n            \"xRequestId\": \"1\",\r\n            \"creditorIban\": \"RO09PORL7789778256833565\",\r\n            \"creditorName\": \"Richard A Roe\",\r\n            \"amount\": 10,\r\n            \"details\": \"test1\"\r\n        },\r\n        {\r\n            \"xRequestId\": \"2\",\r\n            \"creditorIban\": \"RO26BTRLRONCRT0607441901\",\r\n            \"creditorName\": \"Test\",\r\n            \"amount\": 20,\r\n            \"details\": \"test2\"\r\n        }\r\n    ],\r\n    \"psuEmail\": \"daniela.popa@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"123\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"isCorporate\": true,\r\n    \"TCAccepted\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/bulk/initPayments/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"bulk",
+								"initPayments",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - BRD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "PSU-IP-Address",
+								"value": "192.12.123.32",
+								"description": "//some old value 198.121.321.1.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtorIban\": \"RO83BRDE1234567890123456\",\r\n    \"debtorBank\": \"BRD\",\r\n    \"payments\": [\r\n        {\r\n            \"xRequestId\": \"1\",\r\n            \"creditorIban\": \"RO09PORL7789778256833565\",\r\n            \"creditorName\": \"Test test test\",\r\n            \"amount\": 10.12,\r\n            \"details\": \"test1#\"\r\n        },\r\n        {\r\n            \"xRequestId\": \"2\",\r\n            \"creditorIban\": \"RO26BTRLRONCRT0607441901\",\r\n            \"creditorName\": \"Test\",\r\n            \"amount\": \"20.32\",\r\n            \"details\": \"test2\"\r\n        }\r\n    ],\r\n    \"psuEmail\": \"dummy@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"123\",\r\n    \"psuId\": \"31111111\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"isCorporate\": true,\r\n    \"TCAccepted\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/bulk/initPayments/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"bulk",
+								"initPayments",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - LIB",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "PSU-IP-Address",
+								"value": "192.12.123.32",
+								"description": "//some old value 198.121.321.1.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtorIban\": \"RO51BREL0002003494240100\",\r\n    \"debtorBank\": \"LIB\",\r\n    \"payments\": [\r\n        {\r\n            \"xRequestId\": \"1\",\r\n            \"creditorIban\": \"RO09PORL7789778256833565\",\r\n            \"creditorName\": \"Richard A Roe\",\r\n            \"amount\": 10,\r\n            \"details\": \"test1\"\r\n        },\r\n        {\r\n            \"xRequestId\": \"2\",\r\n            \"creditorIban\": \"RO26BTRLRONCRT0607441901\",\r\n            \"creditorName\": \"Test\",\r\n            \"amount\": 20,\r\n            \"details\": \"test2\"\r\n        }\r\n    ],\r\n    \"psuEmail\": \"dummy@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"123\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"isCorporate\": false,\r\n    \"TCAccepted\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/bulk/initPayments/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"bulk",
+								"initPayments",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InitPayment - BCR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "PSU-IP-Address",
+								"value": "192.12.123.32",
+								"description": "//some old value 198.121.321.1.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtorIban\": \"RO68RNCB0285087588940001\",\r\n    \"debtorBank\": \"BCR\",\r\n    \"payments\": [\r\n        {\r\n            \"xRequestId\": \"1\",\r\n            \"creditorIban\": \"RO09PORL7789778256833565\",\r\n            \"creditorName\": \"test\",\r\n            \"amount\": 10.1,\r\n            \"details\": \"descriere test\"\r\n        },\r\n        {\r\n            \"xRequestId\": \"2\",\r\n            \"creditorIban\": \"RO26BTRLRONCRT0607441901\",\r\n            \"creditorName\": \"Test\",\r\n            \"amount\": 20,\r\n            \"details\": \"test2\"\r\n        },\r\n        {\r\n            \"xRequestId\": \"3\",\r\n            \"creditorIban\": \"RO26BTRLRONCRT0607441901\",\r\n            \"creditorName\": \"Test\",\r\n            \"amount\": 0.1,\r\n            \"details\": \"test3\"\r\n        }\r\n    ],\r\n    \"psuEmail\": \"dummy@itsmartsystems.eu\",\r\n    \"psuIntermediarId\": \"123\",\r\n    \"redirectURL\": \"https://www.google.ro\",\r\n    \"isCorporate\": true,\r\n    \"TCAccepted\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/bulk/initPayments/{{paymentId}}",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"bulk",
+								"initPayments",
+								"{{paymentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPaymentStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "PSU-IP-Address",
+								"value": "198.121.321.1.1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{MTLS_BASE_URI}}/core/rest/api/bulk/status/:externalPaymentId",
+							"host": [
+								"{{MTLS_BASE_URI}}"
+							],
+							"path": [
+								"core",
+								"rest",
+								"api",
+								"bulk",
+								"status",
+								":externalPaymentId"
+							],
+							"variable": [
+								{
+									"key": "externalPaymentId",
+									"value": "{{paymentId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,17 @@
+[
+    { "id": "introducere", "title": "Introducere" },
+    { "id": "informatii", "title": "Informații colectate de ONedu" },
+    { "id": "dece", "title": "De ce colectăm date" },
+    { "id": "optiuni", "title": "Opțiunile tale de confidențialitate" },
+    { "id": "publicitate", "title": "Publicitate" },
+    { "id": "cookie", "title": "Cum folosește ONedu cookie-urile" },
+    { "id": "donatii", "title": "Cum folosește ONedu datele pentru donație" },
+    { "id": "acces", "title": "Permiterea accesului la informații" },
+    { "id": "pastrare", "title": "Păstrarea informațiilor în siguranță" },
+    { "id": "export", "title": "Exportul și ștergerea informațiilor" },
+    { "id": "conformitate", "title": "Conformitatea și cooperarea cu autoritățile de reglementare" },
+    { "id": "cerinte", "title": "Cerințele europene" },
+    { "id": "despre", "title": "Despre această politică" },
+    { "id": "conexe", "title": "Politici conexe" }
+  ]
+  
