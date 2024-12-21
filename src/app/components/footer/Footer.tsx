@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa';
 import styles from './Footer.module.css';
+import Image from "next/image";
 
 const Footer = () => {  
   
@@ -119,7 +120,7 @@ const Footer = () => {
       <div className={styles.footerBottom}>
         <div className={styles.logoSectionBottom}>
           <div className={styles.logoContainerBottom}>
-            <img src="/logo-white.png" alt="Logo" className={styles.logoLarge} />
+            <Image src="/logo-white.png" alt="Logo" className={styles.logoLarge} />
             <div className={styles.legalLinksBottom}>
               <Link href="/privacy">Confidențialitate</Link>
               <Link href="/terms">Termeni</Link>
@@ -130,7 +131,7 @@ const Footer = () => {
         <div className={styles.digitalPartnerSectionBottom}>
           <span className={styles.partnerText}>Partener digitalizare</span>
           <Link href="https://web365.ro" target="_blank">
-            <img src="/web365-logo.png" alt="Web365 Logo" className={styles.partnerLogo} />
+            <Image src="/web365-logo.png" alt="Web365 Logo" className={styles.partnerLogo} />
           </Link>
         </div>
       </div>

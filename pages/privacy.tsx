@@ -6,7 +6,7 @@ import styles from "../src/app/style/TermsPage.module.css";
 const SidebarMenu: React.FC<{ onSelect: (id: string) => void }> = ({ onSelect }) => {
     const [menu, setMenu] = useState<{ id: string; title: string }[]>([]);
     const [expandedItem, setExpandedItem] = useState<string | null>(null);
-    const [subMenu, setSubMenu] = useState<{ subtitle: string; content: string }[] | null>(null);
+    const [, setSubMenu] = useState<{ subtitle: string; content: string }[] | null>(null);
   
     useEffect(() => {
       fetch("/privacy/privacy.json")

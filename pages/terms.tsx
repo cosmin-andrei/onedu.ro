@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from '../src/app/layout';
 import DOMPurify from "dompurify";
 import styles from "../src/app/style/TermsPage.module.css";
+import { jsPDF } from "jspdf";
 
 const SidebarMenu: React.FC<{ onSelect: (id: string) => void }> = ({ onSelect }) => {
     const [menu, setMenu] = useState<{ id: string; title: string }[]>([]);
@@ -115,7 +116,6 @@ const GeneratePDF: React.FC<{ selectedId: string | null }> = ({ selectedId }) =>
     fetch(`/${selectedId}.json`)
       .then((response) => response.json())
       .then((data) => {
-        const { jsPDF } = require("jspdf");
         const doc = new jsPDF();
 
         // Titlu
