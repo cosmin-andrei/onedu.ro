@@ -1,8 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import fs from "fs";
-import path from "path";
 import Image from "next/image";
+
+const ARTICLES_JSON_PATH = '../src/app/data/articole.json';
 
 type Article = {
     id: string;
@@ -18,7 +19,6 @@ type Article = {
 const ArticlePage = ({ article }: { article: Article }) => {
     const router = useRouter();
 
-    // Afișează un mesaj de încărcare dacă ruta nu este pregătită
     if (router.isFallback) {
         return <div>Se încarcă...</div>;
     }
@@ -38,10 +38,8 @@ const ArticlePage = ({ article }: { article: Article }) => {
     );
 };
 
-// Functia `getStaticPaths` pentru generarea rutelor dinamice
 export const getStaticPaths: GetStaticPaths = async () => {
-    const filePath = path.join(process.cwd(), "data", "articole.json");
-    const jsonData = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    const jsonData = JSON.parse(fs.readFileSync(ARTICLES_JSON_PATH, "utf8"));
 
     const paths = jsonData.articles.map((article: Article) => ({
         params: {
@@ -53,10 +51,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return { paths, fallback: true };
 };
 
-// Functia `getStaticProps` pentru a prelua datele unui articol
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const filePath = path.join(process.cwd(), "data", "articole.json");
-    const jsonData = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    const jsonData = JSON.parse(fs.readFileSync(ARTICLES_JSON_PATH, "utf8"));
 
     const article = jsonData.articles.find(
         (article: Article) =>
