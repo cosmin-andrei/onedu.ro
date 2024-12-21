@@ -1,7 +1,7 @@
 /* Hero Section - Ajustează înălțimea și poziționarea textului */
 .heroSection {
     width: 100vw;
-    height: 50vh; 
+    height: 50vh;
     background: url('../../../public/img/hero-bg.jpg') no-repeat center center;
     background-size: cover;
     padding: 2rem;
@@ -10,7 +10,7 @@
     align-items: center;
     margin: 0;
   }
-  
+
   .heroContentWrapper {
     display: flex;
     gap: 2rem; /* Ajustează distanța dintre elemente */
@@ -18,24 +18,24 @@
     align-items: center;
     justify-content: flex-start; /* Asigură că textul rămâne pe partea stângă */
   }
-  
+
   .heroTextWrapper {
     max-width: 500px;
     color: #000000;
     margin-left: 2rem; /* Asigură că textul nu are spațiu pe partea stângă */
   }
-  
+
   .heroTitle {
     font-size: 3rem; /* Mărim fontul pentru un impact mai mare */
     font-weight: bold;
     margin-bottom: 1rem;
   }
-  
+
   .heroSubtitle {
     font-size: 1.2rem;
     line-height: 1.5;
   }
-  
+
 
   /* ABOUT SECTION */
 
@@ -44,7 +44,7 @@
     padding: 3rem 0;
     background-color: #fdfdff;
   }
-  
+
   .aboutContentWrapper {
     width: 100%;
     display: flex;
@@ -53,21 +53,21 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .carouselWrapper {
     flex: 1;
     max-width: 500px; /* Lățimea maximă a caruselului */
   }
-  
+
   .carousel {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .carouselCustom {
     overflow: hidden;
   }
-  
+
   .carousel-item {
     height: 300px; /* Înălțime fixă pentru carusel */
     width: 300px;
@@ -75,30 +75,30 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Asigură imaginea se încadrează fără a fi distorsionată */
     border-radius: 10px;
   }
-  
+
   .aboutTextWrapper {
     flex: 1;
     max-width: 500px;
     padding: 1rem;
   }
-  
+
   .aboutTitle {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
-  
+
   .aboutText {
     font-size: 1rem;
     line-height: 1.5;
-  }  
+  }
 
   .styleImage{
     border-radius: 10px;
@@ -114,21 +114,21 @@
     padding: 3rem;
     margin-bottom: 3rem;
   }
-  
+
   .sectionTitle {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 2rem;
   }
-  
+
   .stepsWrapper {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
     flex-wrap: wrap;
   }
-  
+
   .step {
     background-color: #ffffff;
     padding: 2rem;
@@ -138,43 +138,43 @@
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
+
   .step:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
-  
+
   .stepNumber {
     font-size: 2.5rem;
     font-weight: bold;
     color: #000000;
     margin-bottom: 1rem;
   }
-  
+
   .stepTitle {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
-  
+
   .stepDescription {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
   }
-  
+
   @media (max-width: 768px) {
     .stepsWrapper {
       flex-direction: column;
       align-items: center;
     }
-  
+
     .step {
       width: 80%;
       margin-bottom: 2rem;
     }
   }
-  
+
 
   /* SOLUTII DIGITALE SECTION */
 
@@ -182,21 +182,21 @@
     padding: 3rem;
     background-color: #D2E2FF;
   }
-  
+
   .sectionTitle {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 2rem;
   }
-  
+
   .cardsWrapper {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
   }
-  
+
 
 
   .card2 {
@@ -218,8 +218,8 @@
   width: 100%;
   max-width: 300px;
   height: auto;
-  max-height: 200px; 
-  object-fit: contain; 
+  max-height: 200px;
+  object-fit: contain;
   border-bottom: 1px solid #ddd;
 }
 
@@ -250,7 +250,7 @@
 .card2 a:hover {
     color: #1b0177b8;
 }
-  
+
   /* povestile elevilor */
   .storiesSection {
     padding: 3rem 0;
@@ -324,14 +324,14 @@
     background-color: #D2E2FF;
     padding: 4rem 2rem;
   }
-  
+
   .teamWrapper {
     display: flex;
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
   }
-  
+
   .teamMember {
     background-color: #fff;
     width: 280px;
@@ -347,13 +347,13 @@
     margin-bottom: 2rem;  /* pentru a adăuga un pic de spațiu între carduri */
 
   }
-  
+
   .teamMember:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   }
-  
-  
+
+
   .teamImage {
     width: 100px;  /* poți ajusta dimensiunea după necesități */
     height: 100px; /* asigură-te că lățimea și înălțimea sunt egale pentru a crea un cerc perfect */
@@ -361,15 +361,15 @@
     object-fit: cover; /* asigură-te că imaginea se potrivește bine în cerc */
     margin-bottom: 10px; /* pentru a adăuga un pic de spațiu între imagine și text */
   }
-  
-  
+
+
   .teamName {
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 1rem;
     color: #333;
   }
-  
+
   .teamRole {
     font-size: 1rem;
     color: #777;
@@ -378,27 +378,27 @@
     font-size: 0.7rem;
     color: #777;
   }
-  
+
   @media (max-width: 768px) {
     .teamWrapper {
       flex-direction: column;
       align-items: center;
     }
   }
-  
+
 
   /* Section container */
-.visionSection { 
+.visionSection {
     padding: 4rem 10rem;
   }
-  
+
   .visionTitle {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 1rem;
   }
-  
+
   /* Text styles */
   .visionText {
     font-size: 1.2rem;
@@ -406,8 +406,8 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
-  
-  
+
+
   /* Button styles */
   .digitalizationButton {
     background-color: #1b0177;  /* Albastru închis */
@@ -420,8 +420,7 @@
     cursor: pointer;
     transition: background 0.3s ease;
   }
-  
+
   .digitalizationButton:hover {
     background-color: #1b0177b8;  /* Nuantă mai închisă la hover */
   }
-  
